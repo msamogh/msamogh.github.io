@@ -4,15 +4,12 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I'm Amogh Mannekote. I'm a second-year PhD student working with [Dr. Kristy Boyer](https://www.cise.ufl.edu/boyer-kristy). I'm part of the [LearnDialogue](http://learndialogue.org/) group at the University of Florida.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+My research interest broadly falls at the intersection of dialogue systems, natural language processing, and human-centered computing. I'm currently working on developing methods to enable situated dialogue systems in a CS-Ed context for young learners, which is a "long-tail" domain for NLP.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+#### Open Source Contributions
+I'm a sucker for well-written, reusable code and try to contribute to open source whenever possible.
+- [nonechucks](https://github.com/msamogh/nonechucks) was one such project that was born out of a personal frustration with PyTorch's data-handling modules, which turned into a pretty widely used PyTorch "add-on" (although I don't actively maintain it any more).
+- [Rasa-FRAMES](https://github.com/msamogh/rasa-frames) was another project that I worked on to write a proof-of-concept library that would enable the replication of slots across multiple frames in a conversation.
+- I have also contributed to [TensorFlow](https://github.com/tensorflow/tensorflow) and [Rasa](https://github.com/rasahq/rasa).
