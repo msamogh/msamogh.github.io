@@ -6,7 +6,7 @@ permalink: /about/
 
 I'm Amogh Mannekote. I'm a second-year PhD student working with [Dr. Kristy Boyer](https://www.cise.ufl.edu/boyer-kristy). I'm part of the [LearnDialogue](http://learndialogue.org/) group at the University of Florida.
 
-My research interest broadly falls at the intersection of dialogue systems, natural language processing, and human-centered computing. I'm currently working on developing methods to enable situated dialogue systems in a CS-Ed context for young learners, which is a "long-tail" domain for NLP.
+My research interest broadly falls at the intersection of dialogue systems, natural language processing, and human-centered computing. I'm currently working on developing methods to enable situated dialogue systems in a CS-Ed context for young learners, which is a "long-tail" domain for NLP. Here is my latest [research statement]().
 
 #### Open Source Contributions
 I'm a sucker for well-written, reusable code and try to contribute to open source whenever possible.
