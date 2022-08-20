@@ -1,0 +1,7 @@
+---
+layout: post
+title: "YRSSDS @ SIGDIAL 2022: Position on Collaborative Dialogue Systems"
+date:   2022-08-20
+categories: dialogue
+---
+<a href="https://github.com/msamogh/msamogh.github.io/blob/gh-pages/YRRSDS_2022_Submission.pdf">Position paper</a>
