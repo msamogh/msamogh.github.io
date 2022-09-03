@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm a second-year PhD student in the Department of CISE at the University of Florida, jointly advised by Dr. Kristy Elizabeth Boyer and Dr. Bonnie Dorr. My research area is at the intersection of NLP, Dialogue Systems, and Education.
+I'm a second-year PhD student in the Department of CISE at the University of Florida, jointly advised by [Dr. Kristy Elizabeth Boyer](http://learndialogue.org/person.php?id=keboyer) and [Dr. Bonnie Dorr](https://www.cise.ufl.edu/~bonniejdorr/). My research area is at the intersection of NLP, Dialogue Systems, and Education. I am also a member of the [LearnDialogue](http://learndialogue.org/) research group.
 
 <!-- 
 A data-driven personal website
