@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Amogh's Webpage"
+title                    : "Amogh Mannekote"
 title_separator          : "-"
 name                     : &name "Amogh Mannekote"
 description              : &description "PhD Student @ University of Florida. ML, NLP, Dialogue Systems, HCI."
