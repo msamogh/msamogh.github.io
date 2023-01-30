@@ -8,8 +8,30 @@ redirect_from:
   - /about.html
 ---
 
-I'm a PhD student in the Dept. of CISE at University of Florida, jointly advised by [Kristy Elizabeth Boyer](http://learndialogue.org/person.php?id=keboyer) and [Bonnie Dorr](https://www.cise.ufl.edu/~bonniejdorr/). My research area is at the intersection of NLP, Dialogue Systems, and Education. I am also a member of the [LearnDialogue](http://learndialogue.org/) research group.
+I am highly passionate about two things: **Conversational AI** and **AI Democratization**. In my work, I try to marry these two goals wherever possible.
 
+The direction of dialogue systems research today (even more so than other forms of AI) is controlled excessively by giant players in the industry (case in point: personal assistants like Alexa and Siri). Dialogue research, owing to its inherently interactive nature, lags behind more “well-defined” NLP tasks such as question-answering and information extraction. I see this as a problem in both the short-term as well as the long-run. Given the centrality of dialogue in our lives, I believe it is simply too risky to leave the development of these systems to third-party entities, however well-intentioned they may be.
+
+In the short-run, I think the most amount of progress can be made by distilling (pun intended) the advances made in large language models (LLMs) to resource-poor settings (i.e., involving less data, users with low technical expertise, low compute power, and lack of easy availability of human subjects).
+
+In the medium- to long-run, I think the ultimate way to democratize Conversational AI is by empowering individuals to build, analyze, modify, and own their own dialogue systems. Most importantly, these dialogue systems must be able to advocate for the users’ best interests.
+
+Finally, I am a firm believer that open-source research, software frameworks, and end-products is the means through which we can achieve the above ends.
+
+## Strand 1: Conversational AI for Low-Resource Domains
+
+In my PhD, I am investigating ML/NLP methods that can enable people to build dialogue systems for resource-poor domains (I am advised by Kristy Boyer in my PhD, [who works on building systems for and analyzing dialogue for CS education](http://learndialogue.org/)). 
+
+For a course project, I developed a [proof-of-concept](https://github.com/msamogh/tod-eye-gaze-ui) for an approach that leverages eye-gaze tracking to help dialogue researchers to understand the effectiveness of their experimental setup before running full-blown, expensive crowdsourcing experiments on platforms such as Amazon M-Turk.
+
+I am currently working on extending dialogue state tracking approaches for multi-issue negotiations, which is an underserved dialogue paradigm. Negotiation is a sub-dialogue form in pair-programming, and there is currently very limited research on using SoTA NLP techniques to track information across negotiation.
+
+
+## Strand 2: Open-Source Tools for ML/NLP/Dialogue
+
+I have been fortunate to be able to engage with open-source in several roles. Most recently, I worked at Rasa, where I got to work alongside an amazing team of Conversational AI developers and researchers. Following that, I also worked on a [proof-of-concept](https://github.com/msamogh/rasa-frames) that extended Rasa’s dialogue manager with the ability to track multiple frames in a dialogue. As an individual contributor, I built [nonechucks](https://github.com/msamogh/nonechucks) (a PyTorch-based library for ML developers to deal with “messy” sources of data).
+
+I also enjoy and have experience working on ML infrastructure during my time at Rasa, IBM Watson, and [an NLP startup](https://cruxintelligence.com/) who develop Text-to-SQL semantic-parsing. In all these places, I was heavily involved in software development for their ML-based platforms. As an individual contributor, I have also made small-scaled contributions to production-level codebases such as TensorFlow.
 
 ## Updates
 ### September 2022
