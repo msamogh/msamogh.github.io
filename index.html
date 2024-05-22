@@ -220,21 +220,25 @@ $(function(){
 <div class="posts">
   {% for post in site.posts %}
 
-  <h2>test</h2>
-
     {% if post.highlight %}
     <article class="post">
-
+      <h2>Test1</h2>
       <!-- <div style="position: relative; left:-50px; font-size: 18px;">{{post.year}}</div> -->
 
       <!-- <div style="text-align:center;"><img class="teaser-img" src="{{post.teaser}}"> </div> -->
 
       <div class= "teaser-container">
-        <img class="teaser-left"  src="{{post.teaser}}">
+        <h2>Test2</h2>
+        <img class="teaser-left"  src="{{ post.teaser }}">
       </div>
 
-      <div class= "papertitle entry" >{{ post.title }}</div>
+      <div class= "papertitle entry" >
+        <h2>Test3</h2>
+        {{ post.title }}
+      </div>
 
+      <h2>Test4</h2>
+      
       <div class="entry authors-entry">
         {{ post.authors }}
       </div>
