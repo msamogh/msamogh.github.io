@@ -1,14 +1,12 @@
 ---
 title: "Exploring Usability Issues in Instruction-Based and Schema-Based Authoring of Task-Oriented Dialogue Agents"
 collection: publications
-permalink: /publication/depth-assisted-frn
-excerpt: 'TODO.'
+permalink: /publication/exploring-usability-issues
 date: 2023-07-19
 year: 2023
 venue: 'Proceedings of the 5th International Conference on Conversational User Interfaces'
 teaser: ./images/sgd-schema-cropped.png
-arxiv: '1711.06620'
-arxiv_url: 'https://dl.acm.org/doi/abs/10.1145/3571884.3604310'
+paper_url: 'https://dl.acm.org/doi/abs/10.1145/3571884.3604310'
 publication: 'CUI 2023: Proceedings of the 5th International Conference on Conversational User Interfaces'
 journal:
 authors: <b>Amogh Mannekote</b>, Mehmet Celepkolu, Joseph B. Wiggins, Kristy Elizabeth Boyer
