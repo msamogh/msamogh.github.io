@@ -1,10 +1,12 @@
 ---
 title: "Exploring Usability Issues in Instruction-Based and Schema-Based Authoring of Task-Oriented Dialogue Agents"
 collection: publications
-highlight: true
 permalink: /publication/exploring-usability-issues
+excerpt: 'TODO.'
 date: 2023-07-19
 year: 2023
+order: 1
+is_show: Ture
 venue: 'Proceedings of the 5th International Conference on Conversational User Interfaces'
 teaser: ./images/sgd-schema-cropped.png
 paper_url: 'https://dl.acm.org/doi/abs/10.1145/3571884.3604310'
