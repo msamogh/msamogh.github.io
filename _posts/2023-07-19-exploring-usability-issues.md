@@ -8,11 +8,9 @@ year: 2023
 order: 2
 is_show: Ture
 venue: 'Proceedings of the 5th International Conference on Conversational User Interfaces'
-arxiv: 1911.08718
-arxiv_url: https://arxiv.org/abs/1911.08718
+# arxiv: 1911.08718
+# arxiv_url: https://arxiv.org/abs/1911.08718
 teaser: ./images/sgd-schema-cropped.png
-demo: https://colab.research.google.com/drive/1cJ_dsBUXFaFtjoZB9gDYeahjmysnvnTq?usp=sharing
-code: https://github.com/vinthony/ghost-free-shadow-removal
 authors: <b>Amogh Mannekote</b>, Mehmet Celepkolu, Joseph B. Wiggins, Kristy Elizabeth Boyer
 publication: 'CUI 2023: Proceedings of the 5th International Conference on Conversational User Interfaces'
 ---
