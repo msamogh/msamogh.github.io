@@ -10,7 +10,7 @@ is_show: Ture
 venue: 'arXiv preprint'
 arxiv: 2307.09021
 arxiv_url: https://arxiv.org/abs/2307.09021
-teaser:
+teaser: './images/collaborative-dialogue-management.png'
 authors: <b>Amogh Mannekote</b>
 publication: arXiv preprint arXiv:2307.09021
 ---
