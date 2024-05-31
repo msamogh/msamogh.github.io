@@ -10,7 +10,7 @@ is_show: Ture
 venue: 'arXiv preprint'
 arxiv: 2402.14155
 arxiv_url: https://arxiv.org/abs/2402.14155
-teaser:
+teaser: ./images/continual.png
 authors: <b>Amogh Mannekote</b>, Xiaoyi Tian, Kristy Elizabeth Boyer, Bonnie J. Dorr
 publication: arXiv preprint arXiv:2402.14155
 ---
