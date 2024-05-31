@@ -10,7 +10,7 @@ is_show: Ture
 venue: 'Educational Data Mining'
 arxiv:
 arxiv_url: https://txiaoyi.com/files/Tian_EDM_LLM_2024_camera-ready.pdf
-teaser:
+teaser: './images/amby.png'
 authors: Xiaoyi Tian, <b>Amogh Mannekote</b>, Carly Solomon, Yukyeong Song, Christine Fry Wise, Tom McKlin, Joanne Barrett, Kristy Elizabeth Boyer and Maya Israel
 publication: Poster in Educational Data Mining
 ---
