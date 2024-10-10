@@ -10,7 +10,7 @@ is_show: True
 venue: 'arXiv preprint'
 arxiv: 2406.07794
 arxiv_url: https://arxiv.org/abs/2406.07794v1
-project: ''
+project: 'https://huggingface.co/datasets/msamogh/indirect-requests'
 teaser: './images/indirect-requests.png'
 authors: <b>Amogh Mannekote</b>, Jinseok Nam, Ziming Li, Kristy Elizabeth Boyer, Bonnie J. Dorr
 publication: arXiv preprint arXiv:2406.07794v1
