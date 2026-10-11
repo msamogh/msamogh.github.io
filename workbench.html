@@ -1,0 +1,68 @@
+---
+layout: fresh
+title: Workbench
+permalink: /workbench/
+body_class: workbench
+description: Workbench is a suite of small, sharp tools for attention and focus that Amogh Mannekote builds for himself with coding agents.
+---
+
+<section class="wb-hero" data-spotlight>
+  <div class="noise" aria-hidden="true">
+    <div class="noise-layer noise-soft"></div>
+    <div class="noise-layer noise-sharp"></div>
+  </div>
+  <div class="wrap">
+    <p class="kicker">{{ site.data.workbench.suite }}</p>
+    <h1 class="focus-pull">{{ site.data.workbench.tagline }}.</h1>
+    <p class="lead">
+      My attention leaks in specific, repeatable ways: a feed that eats an hour, a code that pulls me into an inbox, a day that ends with nothing to show.
+      Each tool here plugs one of those leaks. I build them with coding agents in an evening or a weekend,
+      shape them to exactly one person, and keep using the ones that earn it.
+    </p>
+  </div>
+  <div class="wrap">
+    <figure class="window">
+      <img src="{{ '/images/workbench/launcher.png' | relative_url }}" alt="The Workbench launcher: a grid of app icons with names, taglines and Open buttons" width="1600" height="874" loading="eager">
+    </figure>
+    <p class="caption">
+      They all launch from <b>Workbench</b>, a native SwiftUI launcher. One <code>apps.json</code> manifest feeds the launcher, its icons, and this page.
+      <kbd>⌃⌥Space</kbd> summons it, typing filters it, <kbd>↩</kbd> opens.
+    </p>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="chips" role="tablist" aria-label="Filter by category">
+    <button class="chip" aria-pressed="true" data-filter="all">All</button>
+    {% assign cats = site.data.workbench.apps | map: 'category' | uniq %}
+    {% for c in cats %}<button class="chip" aria-pressed="false" data-filter="{{ c }}">{{ c }}</button>{% endfor %}
+  </div>
+
+  <div class="apps">
+    {% for app in site.data.workbench.apps %}
+    <article class="app" id="{{ app.id }}" data-category="{{ app.category }}" style="--c1: {{ app.color[0] }}; --c2: {{ app.color[1] }}">
+      <img class="app-icon" src="{{ '/images/workbench/' | append: app.id | append: '.png' | relative_url }}" alt="" width="96" height="96" loading="lazy">
+      <div class="app-body">
+        <p class="app-meta"><span class="app-cat">{{ app.category }}</span> · {{ app.kind }}</p>
+        <h2 class="app-name">{{ app.name }}</h2>
+        <p class="app-tag">{{ app.tagline }}</p>
+        <p class="app-summary">{{ app.summary }}</p>
+        {% if app.stack != '' %}<p class="app-stack">{{ app.stack }}</p>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap section principles">
+  <div class="section-head">
+    <p class="kicker">How they're built</p>
+    <h2>Rules I keep coming back to</h2>
+  </div>
+  <div class="rules">
+    <div class="rule"><span class="rule-n">01</span><h3>Make the bad path impossible, not just costly.</h3><p>Ratchet won't let work start without a goal. Sieve never paints a raw post. Willpower is a bad dependency.</p></div>
+    <div class="rule"><span class="rule-n">02</span><h3>Local first, private by default.</h3><p>Money, codes and feeds stay on the Mac. Model calls go through a locked-down CLI with no tools when the input is untrusted.</p></div>
+    <div class="rule"><span class="rule-n">03</span><h3>Built for one person.</h3><p>No onboarding, no settings nobody uses. Each tool fits exactly one person's habits, which is why each one is small.</p></div>
+    <div class="rule"><span class="rule-n">04</span><h3>Agents write the code; I own the taste.</h3><p>Coding agents write the code. My job is the spec, the corrections, and deciding what to throw away.</p></div>
+  </div>
+</section>
