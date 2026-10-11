@@ -1,7 +1,8 @@
 ---
 layout: fresh
 body_class: home
-description: Amogh Mannekote studies how language models can simulate people, and builds instruments for a distractible mind.
+description: Amogh Mannekote evaluates and calibrates LLM simulations of human behavior (COLM 2025, AAAI 2025, COLING 2025), and builds tools for a distractible mind.
+og_image: /images/dp.jpeg
 ---
 
 <section class="hero" data-spotlight>
@@ -11,21 +12,26 @@ description: Amogh Mannekote studies how language models can simulate people, an
   </div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="kicker">Ph.D. researcher · University of Florida</p>
+      <p class="kicker">LLM behavioral simulation · Ph.D., University of Florida</p>
       <h1 class="focus-pull">Amogh<br>Mannekote</h1>
       <p class="lead">
-        I study how language models can <em>simulate people</em> (learners, users, the indirect ways we actually talk)
-        and when those simulations can be trusted. On the side I build
-        <a href="{{ '/workbench/' | relative_url }}">instruments for a mind that drifts</a>.
+        I test whether <em>LLM simulations of people</em> can be trusted: whether role-playing agents act on what they say they believe,
+        whether simulated learners stay calibrated, and how to spend inference-time compute so a synthetic population hits real behavioral targets.
       </p>
+      <ul class="venues" aria-label="Recent first-author papers">
+        <li><a href="#pub-2025-07-02-role-playing-belief-behavior">COLM 2025</a></li>
+        <li><a href="#pub-2024-10-01-hyp-mix">AAAI 2025</a></li>
+        <li><a href="#pub-2024-06-12-indirect-requests">COLING 2025</a></li>
+      </ul>
       <div class="hero-links">
         <a class="btn" href="#research">Research</a>
+        <a class="btn btn-ghost" href="{{ '/images/resume.pdf' | relative_url }}" target="_blank" rel="noopener">CV</a>
         <a class="btn btn-ghost" href="{{ '/workbench/' | relative_url }}">The Workbench <span aria-hidden="true">→</span></a>
       </div>
     </div>
     <figure class="portrait">
       <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span>
-      <img src="{{ '/images/dp.jpeg' | relative_url }}" alt="Portrait of Amogh Mannekote" width="220" height="220">
+      <img src="{{ '/images/dp.jpeg' | relative_url }}" alt="Portrait of Amogh Mannekote" width="220" height="220" fetchpriority="high">
     </figure>
   </div>
   <p class="hero-hint" aria-hidden="true">attention is a spotlight. move yours around.</p>
@@ -34,43 +40,23 @@ description: Amogh Mannekote studies how language models can simulate people, an
 <section class="wrap section about">
   <div class="about-text">
     <p>
-      I'm a Ph.D. researcher in Computer &amp; Information Science and Engineering at the
-      <a href="https://ufl.edu/" target="_blank" rel="noopener">University of Florida</a>, advised by
+      I did my Ph.D. in Computer Science at the <a href="https://ufl.edu/" target="_blank" rel="noopener">University of Florida</a> with
       <a href="https://www.cise.ufl.edu/boyer-kristy/" target="_blank" rel="noopener">Kristy Boyer</a> and
-      <a href="https://www.cise.ufl.edu/dorr-bonnie-j/" target="_blank" rel="noopener">Bonnie Dorr</a>, and part of the
-      <a href="http://learndialogue.org" target="_blank" rel="noopener">LearnDialogue</a> group.
-      My work spans dialogue systems, synthetic data generation, and LLM-based simulation of human behaviour.
+      <a href="https://www.cise.ufl.edu/dorr-bonnie-j/" target="_blank" rel="noopener">Bonnie Dorr</a>, on
+      <i>Neurosymbolic Authoring and Test-Time Compute Allocation for Generative Educational Simulations</i>.
     </p>
-    <p class="muted">Always happy to talk research: <a href="mailto:msamogh@gmail.com">msamogh@gmail.com</a></p>
+    <p>
+      The thread through my work is <b>simulating people with language models, and measuring when that works</b>: generative agent-based models
+      checked against dozens of behavioral targets with verifiers that can't be gamed by ordering or verbosity, role-play fidelity,
+      and synthetic users who talk the way real ones do. Before the Ph.D. I built conversational AI and ML systems at Rasa, Fractal Analytics and IBM.
+    </p>
+    <p class="cta"><span class="dot" aria-hidden="true"></span>Open to research roles in behavioral simulation, synthetic populations and LLM evaluation.
+      <a href="mailto:msamogh@gmail.com">msamogh@gmail.com</a></p>
   </div>
   <div class="facts">
-    <div class="fact"><span class="fact-n">{{ site.posts | size }}</span><span class="fact-l">papers</span></div>
-    <div class="fact"><span class="fact-n">{{ site.data.workbench.apps | size }}</span><span class="fact-l">self-built tools</span></div>
-    <div class="fact"><span class="fact-n">2×</span><span class="fact-l">Alexa AI internships</span></div>
-  </div>
-</section>
-
-<section class="section workbench-teaser">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker">Workbench</p>
-      <h2>{{ site.data.workbench.tagline }}.</h2>
-      <p class="section-sub">
-        I build small, sharp tools with coding agents, each aimed at one specific way my focus leaks. They're shaped to exactly one person,
-        live in one Mac launcher, and share one manifest.
-      </p>
-    </div>
-    <div class="app-tiles">
-      {% for app in site.data.workbench.apps %}
-      <a class="tile" href="{{ '/workbench/' | relative_url }}#{{ app.id }}" style="--c1: {{ app.color[0] }}; --c2: {{ app.color[1] }}">
-        <img src="{{ '/images/workbench/' | append: app.id | append: '.png' | relative_url }}" alt="" width="64" height="64" loading="lazy">
-        <span class="tile-name">{{ app.name }}</span>
-        <span class="tile-tag">{{ app.tagline }}</span>
-        <span class="tile-cat">{{ app.category }}</span>
-      </a>
-      {% endfor %}
-    </div>
-    <a class="more" href="{{ '/workbench/' | relative_url }}">Tour the workbench <span aria-hidden="true">→</span></a>
+    <div class="fact"><span class="fact-n">3</span><span class="fact-l">first-author papers at COLM, AAAI &amp; COLING 2025</span></div>
+    <div class="fact"><span class="fact-n">2×</span><span class="fact-l">research intern, Amazon Alexa</span></div>
+    <div class="fact"><span class="fact-n">{{ site.data.workbench.apps | size }}</span><span class="fact-l">tools shipped with coding agents</span></div>
   </div>
 </section>
 
@@ -81,20 +67,23 @@ description: Amogh Mannekote studies how language models can simulate people, an
   </div>
   <ol class="pubs">
     {% for post in site.posts %}
-    <li class="pub">
+    {% assign slug = post.path | split: '/' | last | remove: '.md' %}
+    <li class="pub{% if post.top %} pub-top{% endif %}" id="pub-{{ slug }}">
       {% if post.teaser %}
-      <div class="pub-teaser"><img src="{{ post.teaser | remove_first: './' | prepend: '/' | relative_url }}" alt="" loading="lazy"></div>
+      <div class="pub-teaser"><img src="{{ post.teaser | relative_url }}" alt="" loading="lazy" decoding="async"></div>
+      {% else %}
+      <div class="pub-teaser pub-teaser-type" aria-hidden="true"><span>{{ post.venue }}</span></div>
       {% endif %}
       <div class="pub-body">
-        <h3 class="pub-title">{{ post.title }}</h3>
+        <p class="pub-venue-tag">{{ post.venue }}</p>
+        <h3 class="pub-title">{% if post.paper %}<a href="{{ post.paper }}" target="_blank" rel="noopener">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</h3>
+        {% if post.finding %}<p class="pub-finding">{{ post.finding }}</p>{% endif %}
         <p class="pub-authors">{{ post.authors }}</p>
-        <p class="pub-venue"><span>{{ post.publication }}</span> · {{ post.year }}</p>
+        <p class="pub-venue">{{ post.publication }}</p>
         <p class="pub-links">
-          {% if post.arxiv_url %}<a href="{{ post.arxiv_url }}" target="_blank" rel="noopener">Paper</a>{% endif %}
-          {% if post.paper_url %}<a href="{{ post.paper_url }}" target="_blank" rel="noopener">Paper</a>{% endif %}
-          {% if post.project %}<a href="{{ post.project }}" target="_blank" rel="noopener">{% if post.project contains 'huggingface' %}Dataset{% elsif post.project contains 'github' %}Code{% else %}Project{% endif %}</a>{% endif %}
+          {% if post.paper %}<a href="{{ post.paper }}" target="_blank" rel="noopener">Paper</a>{% endif %}
           {% if post.code %}<a href="{{ post.code }}" target="_blank" rel="noopener">Code</a>{% endif %}
-          {% if post.demo %}<a href="{{ post.demo }}" target="_blank" rel="noopener">Demo</a>{% endif %}
+          {% if post.dataset %}<a href="{{ post.dataset }}" target="_blank" rel="noopener">Dataset</a>{% endif %}
         </p>
       </div>
     </li>
@@ -102,25 +91,51 @@ description: Amogh Mannekote studies how language models can simulate people, an
   </ol>
 </section>
 
+<section class="section workbench-teaser">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Workbench</p>
+      <h2>{{ site.data.workbench.tagline }}.</h2>
+      <p class="section-sub">
+        Outside research, I build small, sharp tools with coding agents, each aimed at one specific way my focus leaks.
+        They're shaped to exactly one person, live in one Mac launcher, and share one manifest.
+      </p>
+    </div>
+    <div class="app-tiles">
+      {% for app in site.data.workbench.apps %}
+      <a class="tile" href="{{ '/workbench/' | relative_url }}#{{ app.id }}" style="--c1: {{ app.color[0] }}; --c2: {{ app.color[1] }}">
+        <img src="{{ '/images/workbench/' | append: app.id | append: '.png' | relative_url }}" alt="" width="64" height="64" loading="lazy" decoding="async">
+        <span class="tile-name">{{ app.name }}</span>
+        <span class="tile-tag">{{ app.tagline }}</span>
+        <span class="tile-cat">{{ app.category }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    <a class="more" href="{{ '/workbench/' | relative_url }}">Tour the workbench <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
 <section class="wrap section two-col">
   <div>
     <div class="section-head"><p class="kicker">Lately</p><h2>News</h2></div>
     <ul class="timeline">
-      <li><span class="when">2024.05</span><span>Attending the <a href="https://cui.acm.org/workshops/CHI2024/" target="_blank" rel="noopener">CUI@CHI workshop</a>.</span></li>
-      <li><span class="when">2024.01</span><span>Full-time researcher on the <a href="https://invite.illinois.edu/" target="_blank" rel="noopener">INVITE AI Institute</a>.</span></li>
-      <li><span class="when">2023.04</span><span>Passed my Ph.D. qualifying exam. <a href="https://arxiv.org/pdf/2307.09021" target="_blank" rel="noopener">Paper</a></span></li>
-      <li><span class="when">2022.09</span><span>SIGDIAL in Edinburgh; presented at YRRSDS. <a href="https://drive.google.com/file/d/13KoTjlINRO2hr-ZkgMVggHyv49cdp6Vc/view" target="_blank" rel="noopener">Poster</a></span></li>
+      <li><span class="when">2025</span><span>Belief-behavior consistency in role-playing agents at <b>COLM 2025</b>. <a href="https://arxiv.org/abs/2507.02197" target="_blank" rel="noopener">Paper</a></span></li>
+      <li><span class="when">2025</span><span>HYP-MIX, simulating learner actions with LLMs, at <b>AAAI 2025</b>. <a href="https://arxiv.org/abs/2410.02110" target="_blank" rel="noopener">Paper</a></span></li>
+      <li><span class="when">2025</span><span>IndirectRequests at <b>COLING 2025</b>, with the dataset public on <a href="https://huggingface.co/datasets/msamogh/indirect-requests" target="_blank" rel="noopener">Hugging Face</a>.</span></li>
+      <li><span class="when">2024</span><span>Second research internship at Amazon Alexa: MENTOR, measuring in-context adaptation to feedback and tool-use instructions.</span></li>
+      <li><span class="when">2024</span><span>Attended the <a href="https://cui.acm.org/workshops/CHI2024/" target="_blank" rel="noopener">CUI@CHI workshop</a>; joined the <a href="https://invite.illinois.edu/" target="_blank" rel="noopener">INVITE AI Institute</a>.</span></li>
     </ul>
   </div>
   <div>
     <div class="section-head"><p class="kicker">Industry</p><h2>Experience</h2></div>
     <ul class="timeline">
-      <li><span class="when">2024</span><span>Applied Science Intern, <b>Alexa AI, Amazon</b> <span class="muted">(summer &amp; fall)</span></span></li>
-      <li><span class="when">2024</span><span>Research Intern, <b>Openstream</b></span></li>
-      <li><span class="when">2020</span><span>Data Scientist, <b>Fractal Analytics</b></span></li>
-      <li><span class="when">2019</span><span>Machine Learning Solutions Architect, <b>Rasa</b></span></li>
-      <li><span class="when">2018–19</span><span>Research Assistant, <b>Robert Bosch Center for Cyber-Physical Systems</b></span></li>
-      <li><span class="when">2018</span><span>Machine Learning Intern, <b>IBM Watson</b></span></li>
+      <li><span class="when">2024</span><span>Research Intern, <b>Amazon Alexa</b></span></li>
+      <li><span class="when">2023</span><span>Research Intern, <b>Openstream.ai</b></span></li>
+      <li><span class="when">2023</span><span>Research Intern, <b>Amazon Alexa</b></span></li>
+      <li><span class="when">2020</span><span>Data Scientist, <b>Fractal Analytics &amp; Crux Intelligence</b></span></li>
+      <li><span class="when">2019</span><span>Machine Learning Solutions Architect, <b>Rasa</b>, Berlin</span></li>
+      <li><span class="when">2018–19</span><span>Research Assistant, <b>Indian Institute of Science</b></span></li>
+      <li><span class="when">2018</span><span>Intern, <b>IBM Watson Machine Learning</b></span></li>
     </ul>
   </div>
 </section>
@@ -128,10 +143,10 @@ description: Amogh Mannekote studies how language models can simulate people, an
 <section class="wrap section two-col small">
   <div>
     <div class="section-head"><p class="kicker">Open source</p></div>
-    <p><a href="https://github.com/msamogh/nonechucks" target="_blank" rel="noopener"><b>nonechucks</b></a>: wrappers for PyTorch datasets, samplers and transforms that drop invalid samples on the fly.</p>
+    <p><a href="https://github.com/msamogh/nonechucks" target="_blank" rel="noopener"><b>nonechucks</b></a>: wrappers for PyTorch datasets, samplers and transforms that drop invalid samples on the fly. It made GitHub's trending Python list.</p>
   </div>
   <div>
-    <div class="section-head"><p class="kicker">Service</p></div>
-    <p>Reviewer for ACM GROUP 2025 (5 papers) and ACL 2024 (1 paper).</p>
+    <div class="section-head"><p class="kicker">Service &amp; awards</p></div>
+    <p>Reviewer for ACM GROUP 2025 and ACL 2024. Graduate Fellowship (2022).</p>
   </div>
 </section>

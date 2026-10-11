@@ -4,6 +4,7 @@
 
 # Name of your site (displayed in the header)
 name: Amogh Mannekote
+title: Amogh Mannekote
 
 # Short bio or description (displayed in the header)
 description: Amogh Mannekote studies how language models can simulate people, and builds instruments for a distractible mind.
@@ -54,6 +55,11 @@ baseurl: ""
 #
 
 permalink: /:title/
+
+# Publications live in _posts as data. Their pages only redirect to the paper, and stay out of the sitemap.
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post, sitemap: false }
 
 # The release of Jekyll Now that you're using
 version: v1.2.0

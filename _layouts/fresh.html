@@ -3,15 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.name }}</title>
+  <title>{% if page.title %}{{ page.title }} · {{ site.name }}{% else %}{{ site.name }} · LLM behavioral simulation{% endif %}</title>
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Amogh Mannekote","url":"{{ '/' | absolute_url }}",
+   "image":"{{ '/images/dp.jpeg' | absolute_url }}","email":"mailto:msamogh@gmail.com",
+   "jobTitle":"Researcher, LLM behavioral simulation",
+   "alumniOf":{"@type":"CollegeOrUniversity","name":"University of Florida"},
+   "knowsAbout":["LLM-based simulation of human behavior","Generative agent-based modeling","LLM agent evaluation","Synthetic data generation"],
+   "sameAs":["https://scholar.google.com/citations?user=Vq8XjxAAAAAJ","https://github.com/msamogh","https://www.linkedin.com/in/msamogh","https://huggingface.co/msamogh"]}
+  </script>
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
   <meta name="author" content="{{ site.name }}">
   <meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.name }}">
   <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
-  <meta property="og:image" content="{{ page.og_image | default: '/images/workbench/launcher.png' | absolute_url }}">
+  <meta property="og:image" content="{{ page.og_image | default: '/images/workbench/launcher.jpg' | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#f5f0e6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="{{ '/images/workbench/workbench.png' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
