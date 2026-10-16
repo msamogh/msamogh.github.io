@@ -1,12 +1,9 @@
-source code of my [homepage](https://vinthony.github.io/academic)
+# msamogh.github.io
 
-## Credits
+Personal site of Amogh Mannekote. It is plain static HTML with inline CSS and JavaScript, no build step and no external requests. `.nojekyll` tells GitHub Pages to serve the files as they are.
 
-- [Evan You](https://evanyou.me/) - CSS hyper-link style.
-- [Jekyll](https://github.com/jekyll/jekyll) & [Jekyll Now](https://github.com/barryclark/jekyll-now) - Thanks to its creators, contributors and maintainers.
-- [Jon Barron](https://jonbarron.info/) & [it's Jekyll fork](https://github.com/leonidk/new_website) - Major inspriation.
+- `index.html` is the whole site.
+- `images/resume.pdf` is the CV linked from the page.
+- `publication/*.html` redirect old paper URLs to the papers.
 
-
-## Use as a templete
-
-It is easy to make your own website with this code. Please following the instraction of [Jekyll Now](https://github.com/barryclark/jekyll-now) for further detail.
+Preview locally with `python3 -m http.server` and open http://localhost:8000.

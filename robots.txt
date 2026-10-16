@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://msamogh.github.io/sitemap.xml

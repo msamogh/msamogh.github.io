@@ -1,152 +1,531 @@
----
-layout: fresh
-body_class: home
-description: Amogh Mannekote evaluates and calibrates LLM simulations of human behavior (COLM 2025, AAAI 2025, COLING 2025), and builds tools for a distractible mind.
-og_image: /images/dp.jpeg
----
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amogh Mannekote</title>
+<meta name="description" content="Amogh Mannekote builds LLM simulations of human behavior calibrated to population-level targets.">
+<meta name="author" content="Amogh Mannekote">
+<link rel="canonical" href="https://msamogh.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Amogh Mannekote">
+<meta property="og:description" content="Amogh Mannekote builds LLM simulations of human behavior calibrated to population-level targets.">
+<meta property="og:url" content="https://msamogh.github.io/">
+<meta property="og:image" content="https://msamogh.github.io/images/portrait-460.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f3f2ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230d0d0c'/%3E%3Ccircle cx='9' cy='22' r='3' fill='%23f3f2ee'/%3E%3Ccircle cx='16' cy='22' r='3' fill='%23f3f2ee'/%3E%3Ccircle cx='16' cy='15' r='3' fill='%23f3f2ee'/%3E%3Ccircle cx='23' cy='22' r='3' fill='%23ff5a36'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Amogh Mannekote","url":"https://msamogh.github.io/",
+ "image":"https://msamogh.github.io/images/portrait-460.jpg",
+ "jobTitle":"Research Scientist","worksFor":{"@type":"Organization","name":"Openstream.ai"},
+ "alumniOf":{"@type":"CollegeOrUniversity","name":"University of Florida"},
+ "knowsAbout":["LLM behavioral simulation","Generative agent-based modeling","Test-time compute allocation","Reinforcement learning","Synthetic data generation"],
+ "sameAs":["https://scholar.google.com/citations?user=Vq8XjxAAAAAJ","https://github.com/msamogh","https://www.linkedin.com/in/msamogh","https://huggingface.co/msamogh"]}
+</script>
+<style>
+:root{
+  --bg:#f3f2ee; --bg-2:#e9e7e0; --ink:#0d0d0c; --ink-2:#3d3c39; --muted:#6d6b66; --rule:#d6d3ca;
+  --accent:#e2401c; --accent-ink:#b52f10;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --serif:ui-serif,"New York","Iowan Old Style",Charter,"Source Serif Pro",Georgia,serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  --wrap:1200px; --gut:clamp(16px,4vw,40px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0d0d0c; --bg-2:#181816; --ink:#f1efe9; --ink-2:#c9c6be; --muted:#8f8c84; --rule:#2c2b28;
+    --accent:#ff5a36; --accent-ink:#ff7b5c; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0d0d0c; --bg-2:#181816; --ink:#f1efe9; --ink-2:#c9c6be; --muted:#8f8c84; --rule:#2c2b28;
+  --accent:#ff5a36; --accent-ink:#ff7b5c; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;text-decoration-color:var(--rule);transition:text-decoration-color .15s,color .15s}
+a:hover{text-decoration-color:var(--accent);color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--bg);padding:8px 12px;z-index:9}
+.skip:focus{left:8px}
+.label{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+b,strong{font-weight:600}
 
-<section class="hero" data-spotlight>
-  <div class="noise" aria-hidden="true">
-    <div class="noise-layer noise-soft"></div>
-    <div class="noise-layer noise-sharp"></div>
+/* top bar */
+.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+.top.scrolled{border-bottom-color:var(--rule)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{white-space:nowrap;font:650 15px/1 var(--display);letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block}
+.top nav{display:flex;gap:clamp(14px,2.4vw,28px);font:500 14px/1 var(--sans)}
+.top nav a{text-decoration:none;color:var(--ink-2)}
+.top nav a:hover{color:var(--ink)}
+@media (max-width:560px){.top nav .opt{display:none}.top nav{font-size:13.5px}}
+
+/* hero */
+.hero{padding:clamp(48px,9vw,112px) 0 clamp(48px,7vw,88px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:end}
+h1{font:800 clamp(52px,7.2vw,104px)/.88 var(--display);letter-spacing:-.055em;margin:18px 0 28px;text-wrap:balance}
+h1 span{display:block}
+.role{display:flex;flex-wrap:wrap;gap:6px 18px;font:500 15px/1.4 var(--sans);color:var(--ink-2);margin:0 0 30px}
+.role span+span::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--rule);margin-right:18px;vertical-align:middle;transform:translateY(-1px)}
+.thesis{font:400 clamp(22px,2.3vw,30px)/1.32 var(--serif);letter-spacing:-.012em;margin:0;max-width:30ch;color:var(--ink)}
+.thesis em{font-style:italic;color:var(--accent-ink)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 18px;border-radius:999px;font:550 14px/1 var(--sans);text-decoration:none;border:1px solid var(--ink);background:var(--ink);color:var(--bg)}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn.ghost:hover{border-color:var(--ink);color:var(--ink);background:transparent}
+
+/* figure */
+.fig{margin:0;border:1px solid var(--rule);border-radius:14px;background:var(--bg-2);padding:18px 18px 14px}
+.fig-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+.fig-state{font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px}
+.fig-state i{width:7px;height:7px;border-radius:50%;background:var(--muted);transition:background .3s}
+.fig-state.on i{background:var(--accent)}
+.fig button{font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);background:transparent;border:1px solid var(--rule);border-radius:999px;padding:7px 11px;cursor:pointer}
+.fig button:hover{border-color:var(--ink);color:var(--ink)}
+.fig svg{display:block;width:100%;height:auto}
+.fig circle{fill:var(--muted)}
+.fig.done circle{fill:var(--ink);transition:fill .5s}
+.fig .curve{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-dasharray:4 5}
+.fig .axis{stroke:var(--ink);stroke-width:1}
+.fig text{font:500 10px var(--mono);fill:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.fig figcaption{font:400 13px/1.5 var(--sans);color:var(--muted);margin-top:10px}
+
+/* sections */
+.sec,.contact{scroll-margin-top:52px}
+.sec{border-top:1px solid var(--rule);padding:clamp(56px,7vw,96px) 0}
+.sec-grid{display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(24px,4vw,64px)}
+.sec-label{position:sticky;top:84px;align-self:start}
+.sec-label .n{font:500 12px/1 var(--mono);color:var(--accent-ink);display:block;margin-bottom:10px}
+h2{font:700 clamp(26px,2.6vw,34px)/1.1 var(--display);letter-spacing:-.03em;margin:0}
+.lede{font:400 clamp(19px,1.7vw,22px)/1.5 var(--serif);color:var(--ink);margin:0 0 8px;max-width:60ch}
+.lede+.lede{margin-top:18px}
+p{max-width:68ch}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:clamp(24px,4vw,56px);align-items:start}
+.about img{width:100%;height:auto;aspect-ratio:1;border-radius:12px;display:block;background:var(--bg-2);filter:saturate(.92)}
+
+/* research threads */
+.threads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden;margin-top:40px}
+.thread{background:var(--bg);padding:28px 28px 26px;display:flex;flex-direction:column;gap:12px}
+.thread .k{font:500 12px/1 var(--mono);color:var(--accent-ink);letter-spacing:.06em}
+.thread h3{font:650 21px/1.2 var(--display);letter-spacing:-.02em;margin:0}
+.thread p{margin:0;color:var(--ink-2);font-size:16px}
+.thread .refs{margin-top:auto;padding-top:6px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{font:500 11.5px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--rule);border-radius:999px;padding:6px 10px;text-decoration:none;color:var(--ink-2)}
+a.tag:hover{border-color:var(--accent);color:var(--accent-ink)}
+.tag.now{border-color:var(--accent);color:var(--accent-ink)}
+
+/* publications */
+.feat{list-style:none;margin:0;padding:0}
+.feat li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:28px 0;border-bottom:1px solid var(--rule)}
+.feat li:first-child{padding-top:0}
+.venue{font:600 13px/1.3 var(--mono);color:var(--accent-ink);letter-spacing:.02em;padding-top:5px}
+.ptitle{font:500 clamp(20px,1.8vw,24px)/1.3 var(--serif);letter-spacing:-.01em;margin:0 0 10px}
+.ptitle a{text-decoration:none}
+.ptitle a:hover{text-decoration:underline;text-decoration-color:var(--accent)}
+.finding{margin:0 0 10px;color:var(--ink-2)}
+.authors{margin:0;font-size:14.5px;color:var(--muted)}
+.authors b{color:var(--ink);font-weight:600}
+.plinks{display:flex;gap:16px;margin-top:10px;font:500 13px/1 var(--mono);letter-spacing:.03em}
+h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:56px 0 8px}
+.plist{list-style:none;margin:0;padding:0}
+.plist li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.plist .y{font:500 13px/1.6 var(--mono);color:var(--muted)}
+.plist .t{font-weight:550;margin:0 0 3px}
+.plist .t a{text-decoration:none}
+.plist .t a:hover{text-decoration:underline}
+.plist .m{margin:0;font-size:14.5px;color:var(--muted)}
+
+.feat li{grid-template-columns:120px minmax(0,1fr) 248px}
+.pfig{margin:0;align-self:start;border:1px solid var(--rule);border-radius:10px;background:var(--bg-2);padding:10px 12px 8px}
+.pfig svg{display:block;width:100%;height:auto}
+.pfig figcaption{font:500 10px/1.3 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.pfig .ln{stroke:var(--ink);stroke-width:1;fill:none}
+.pfig .lm{stroke:var(--rule);stroke-width:1;fill:none}
+.pfig .ac{stroke:var(--accent);stroke-width:1.6;fill:none}
+.pfig .fi{fill:var(--ink)}
+.pfig .fa{fill:var(--accent)}
+.pfig .fb{fill:var(--bg);stroke:var(--ink);stroke-width:1}
+.pfig .fm{fill:var(--muted)}
+.pfig text{font:500 9px var(--mono);fill:var(--muted);letter-spacing:.04em}
+.pfig text.t{font:400 11px var(--serif);fill:var(--ink);letter-spacing:0}
+.pfig text.k{fill:var(--ink)}
+.pfig text.a{fill:var(--accent-ink)}
+@media (max-width:1060px){.feat li{grid-template-columns:120px minmax(0,1fr)}.pfig{grid-column:2;max-width:340px}}
+
+/* rows (experience, news, software) */
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:120px minmax(0,1fr) auto;gap:6px 24px;padding:16px 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.rows .d{font:500 13px/1.6 var(--mono);color:var(--muted);white-space:nowrap}
+.rows .w{margin:0}
+.rows .w b{font-weight:600}
+.rows .w span{color:var(--muted)}
+.rows .loc{font-size:14px;color:var(--muted);text-align:right}
+.rows.news li{grid-template-columns:120px minmax(0,1fr)}
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,5vw,72px)}
+.split h3.sub:first-child{margin-top:0}
+
+/* contact */
+.contact{padding:clamp(72px,10vw,140px) 0 48px;border-top:1px solid var(--rule)}
+.contact .big{font:700 clamp(36px,6.4vw,88px)/1 var(--display);letter-spacing:-.045em;margin:18px 0 28px;word-break:break-word}
+.contact .big a{text-decoration:none}
+.contact .big .ob{color:var(--muted);font-weight:500;letter-spacing:-.02em}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:72px;padding-top:20px;border-top:1px solid var(--rule);font-size:13px;color:var(--muted)}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;align-items:start}
+  h1{font-size:clamp(50px,13.5vw,120px)}
+  .sec-grid{grid-template-columns:1fr}
+  .sec-label{position:static}
+  .split{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .role{flex-direction:column}
+  .role span+span::before{display:none}
+  .about{grid-template-columns:1fr}
+  .about img{max-width:180px}
+  .threads{grid-template-columns:1fr}
+  .thread{padding:22px 20px}
+  .feat li,.plist li{grid-template-columns:1fr;gap:6px}
+  .pfig{grid-column:1;margin-top:8px}
+  .venue{padding-top:0}
+  .rows li,.rows.news li{grid-template-columns:1fr;gap:2px}
+  .rows .loc{text-align:left}
+}
+@media print{.top,.fig,.cta{display:none}.sec{padding:24px 0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#main"><i aria-hidden="true"></i>Amogh Mannekote</a>
+    <nav aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Papers</a>
+      <a class="opt" href="#experience">Experience</a>
+      <a href="images/resume.pdf">CV</a>
+    </nav>
   </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
   <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="kicker">LLM behavioral simulation · Ph.D., University of Florida</p>
-      <h1 class="focus-pull">Amogh<br>Mannekote</h1>
-      <p class="lead">
-        I test whether <em>LLM simulations of people</em> can be trusted: whether role-playing agents act on what they say they believe,
-        whether simulated learners stay calibrated, and how to spend inference-time compute so a synthetic population hits real behavioral targets.
-      </p>
-      <ul class="venues" aria-label="Recent first-author papers">
-        <li><a href="#pub-2025-07-02-role-playing-belief-behavior">COLM 2025</a></li>
-        <li><a href="#pub-2024-10-01-hyp-mix">AAAI 2025</a></li>
-        <li><a href="#pub-2024-06-12-indirect-requests">COLING 2025</a></li>
-      </ul>
-      <div class="hero-links">
-        <a class="btn" href="#research">Research</a>
-        <a class="btn btn-ghost" href="{{ '/images/resume.pdf' | relative_url }}" target="_blank" rel="noopener">CV</a>
-        <a class="btn btn-ghost" href="{{ '/workbench/' | relative_url }}">The Workbench <span aria-hidden="true">→</span></a>
+    <div>
+      <p class="label">LLM behavioral simulation</p>
+      <h1><span>Amogh</span><span>Mannekote</span></h1>
+      <!-- TODO(confirm): exact job title at Openstream.ai -->
+      <p class="role"><span>Research Scientist, Openstream.ai</span><span>Ph.D., University of Florida</span></p>
+      <p class="thesis">I build language-model simulations of human behavior that <em>hold up at the population level</em>, so that researchers can run studies on simulated people when recruiting real ones is the bottleneck.</p>
+      <div class="cta">
+        <a class="btn" href="#research">Research program</a>
+        <a class="btn ghost" href="images/resume.pdf">CV (PDF)</a>
+        <a class="btn ghost" href="https://scholar.google.com/citations?user=Vq8XjxAAAAAJ">Google Scholar</a>
       </div>
     </div>
-    <figure class="portrait">
-      <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span>
-      <img src="{{ '/images/dp.jpeg' | relative_url }}" alt="Portrait of Amogh Mannekote" width="220" height="220" fetchpriority="high">
+
+    <figure class="fig" id="fig">
+      <div class="fig-head">
+        <span class="fig-state" id="fig-state"><i aria-hidden="true"></i><span>Uncalibrated</span></span>
+        <button type="button" id="fig-run">Resample</button>
+      </div>
+      <svg id="pop" viewBox="0 0 480 300" role="img" aria-label="Illustration: a population of simulated agents, shown as dots, moving from a scattered state into a histogram that matches a two-peaked behavioral target curve.">
+        <line class="axis" x1="20" y1="272" x2="460" y2="272"/>
+        <text x="20" y="292">behavioral measure</text>
+        <text x="460" y="292" text-anchor="end">simulated agents, n = 180</text>
+        <path class="curve" id="pop-curve" d=""/>
+        <g id="pop-dots"></g>
+      </svg>
+      <figcaption>Illustration. Each dot is one simulated agent. Calibration moves the simulated population onto a behavioral target measured in real people (dashed line), rather than tuning any single agent in isolation.</figcaption>
     </figure>
   </div>
-  <p class="hero-hint" aria-hidden="true">attention is a spotlight. move yours around.</p>
 </section>
 
-<section class="wrap section about">
-  <div class="about-text">
-    <p>
-      I did my Ph.D. in Computer Science at the <a href="https://ufl.edu/" target="_blank" rel="noopener">University of Florida</a> with
-      <a href="https://www.cise.ufl.edu/boyer-kristy/" target="_blank" rel="noopener">Kristy Boyer</a> and
-      <a href="https://www.cise.ufl.edu/dorr-bonnie-j/" target="_blank" rel="noopener">Bonnie Dorr</a>, on
-      <i>Neurosymbolic Authoring and Test-Time Compute Allocation for Generative Educational Simulations</i>.
-    </p>
-    <p>
-      The thread through my work is <b>simulating people with language models, and measuring when that works</b>: generative agent-based models
-      checked against dozens of behavioral targets with verifiers that can't be gamed by ordering or verbosity, role-play fidelity,
-      and synthetic users who talk the way real ones do. Before the Ph.D. I built conversational AI and ML systems at Rasa, Fractal Analytics and IBM.
-    </p>
-    <p class="cta"><span class="dot" aria-hidden="true"></span>Open to research roles in behavioral simulation, synthetic populations and LLM evaluation.
-      <a href="mailto:msamogh@gmail.com">msamogh@gmail.com</a></p>
-  </div>
-  <div class="facts">
-    <div class="fact"><span class="fact-n">3</span><span class="fact-l">first-author papers at COLM, AAAI &amp; COLING 2025</span></div>
-    <div class="fact"><span class="fact-n">2×</span><span class="fact-l">research intern, Amazon Alexa</span></div>
-    <div class="fact"><span class="fact-n">{{ site.data.workbench.apps | size }}</span><span class="fact-l">tools shipped with coding agents</span></div>
-  </div>
-</section>
-
-<section class="wrap section" id="research">
-  <div class="section-head">
-    <p class="kicker">Research</p>
-    <h2>Publications</h2>
-  </div>
-  <ol class="pubs">
-    {% for post in site.posts %}
-    {% assign slug = post.path | split: '/' | last | remove: '.md' %}
-    <li class="pub{% if post.top %} pub-top{% endif %}" id="pub-{{ slug }}">
-      {% if post.teaser %}
-      <div class="pub-teaser"><img src="{{ post.teaser | relative_url }}" alt="" loading="lazy" decoding="async"></div>
-      {% else %}
-      <div class="pub-teaser pub-teaser-type" aria-hidden="true"><span>{{ post.venue }}</span></div>
-      {% endif %}
-      <div class="pub-body">
-        <p class="pub-venue-tag">{{ post.venue }}</p>
-        <h3 class="pub-title">{% if post.paper %}<a href="{{ post.paper }}" target="_blank" rel="noopener">{{ post.title }}</a>{% else %}{{ post.title }}{% endif %}</h3>
-        {% if post.finding %}<p class="pub-finding">{{ post.finding }}</p>{% endif %}
-        <p class="pub-authors">{{ post.authors }}</p>
-        <p class="pub-venue">{{ post.publication }}</p>
-        <p class="pub-links">
-          {% if post.paper %}<a href="{{ post.paper }}" target="_blank" rel="noopener">Paper</a>{% endif %}
-          {% if post.code %}<a href="{{ post.code }}" target="_blank" rel="noopener">Code</a>{% endif %}
-          {% if post.dataset %}<a href="{{ post.dataset }}" target="_blank" rel="noopener">Dataset</a>{% endif %}
-        </p>
+<section class="sec" id="about" aria-labelledby="about-h">
+  <div class="wrap sec-grid">
+    <div class="sec-label"><span class="n">01</span><h2 id="about-h">About</h2></div>
+    <div class="about">
+      <div>
+        <p class="lede">My PhD in Computer Science at the University of Florida, advised by <a href="https://www.cise.ufl.edu/boyer-kristy/">Kristy Boyer</a> and <a href="https://www.cise.ufl.edu/dorr-bonnie-j/">Bonnie Dorr</a>, developed generative agent-based models of learners and calibrated them to population-level behavioral targets through test-time compute allocation.</p>
+        <p class="lede">My current work trains models against those behavioral targets directly with reinforcement learning. Before and during the PhD, I worked on task-oriented dialogue and synthetic data generation at Amazon Alexa, Openstream.ai, and Rasa.</p>
       </div>
-    </li>
-    {% endfor %}
-  </ol>
+      <img src="images/portrait-460.jpg" srcset="images/portrait-240.jpg 240w, images/portrait-460.jpg 460w" sizes="(max-width:640px) 180px, 220px" width="460" height="460" alt="Portrait of Amogh Mannekote" decoding="async">
+    </div>
+  </div>
 </section>
 
-<section class="section workbench-teaser">
+<section class="sec" id="research" aria-labelledby="research-h">
+  <div class="wrap sec-grid">
+    <div class="sec-label"><span class="n">02</span><h2 id="research-h">Research program</h2></div>
+    <div>
+      <p class="lede">A simulated population is useful as a scientific instrument only if its aggregate behavior matches what real populations do. My work treats that match as the objective: I measure where LLM simulations of people diverge from human behavior, calibrate them at inference time, and train models so that the calibration becomes a property of the model.</p>
+      <div class="threads">
+        <article class="thread">
+          <span class="k">A · Fidelity</span>
+          <h3>Belief-behavior consistency</h3>
+          <p>Role-playing agents can describe how a persona will behave and then simulate it doing something else. In LLM simulations of human trust, models' stated predictions about a persona do not reliably match the behavior they generate for it, so a simulation's self-report cannot substitute for behavioral validation.</p>
+          <div class="refs"><a class="tag" href="https://arxiv.org/abs/2507.02197">COLM 2025</a></div>
+        </article>
+        <article class="thread">
+          <span class="k">B · Calibration</span>
+          <h3>Calibration as test-time compute allocation</h3>
+          <p>My dissertation holds the generator and the target specification fixed and asks how inference-time compute should be distributed across a simulated population. Across fifty behavioral targets for simulated pair programming, whether a target is defined per session or over the whole batch predicts both its difficulty and which allocation strategy works.</p>
+          <div class="refs"><span class="tag">Dissertation, 2026</span></div>
+        </article>
+        <article class="thread">
+          <span class="k">C · Authoring</span>
+          <h3>Simulating learners from composable hypotheses</h3>
+          <p>HYP-MIX lets education researchers specify learner behavior as combinations of testable hypotheses and checks whether LLM-simulated learners stay behaviorally calibrated when those hypotheses are modified. It is the framework the learner-simulation work in my dissertation builds on.</p>
+          <div class="refs"><a class="tag" href="https://arxiv.org/abs/2410.02110">AAAI 2025</a><a class="tag" href="https://github.com/msamogh/hypmix">Code</a></div>
+        </article>
+        <article class="thread">
+          <span class="k">D · Training</span>
+          <h3>Training against behavioral targets</h3>
+          <p>Search at inference time can make a population hit its targets, but it pays that cost on every run. My current work moves the objective into training and uses reinforcement learning to optimize models directly against population-level behavioral targets.</p>
+          <div class="refs"><span class="tag now">Current work</span></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="publications" aria-labelledby="pubs-h">
+  <div class="wrap sec-grid">
+    <div class="sec-label"><span class="n">03</span><h2 id="pubs-h">Publications</h2></div>
+    <div>
+      <ol class="feat">
+        <li>
+          <div class="venue">COLM 2025</div>
+          <div>
+            <h3 class="ptitle"><a href="https://arxiv.org/abs/2507.02197">Do Role-Playing Agents Practice What They Preach? Belief-Behavior Consistency in LLM-Based Simulations of Human Trust</a></h3>
+            <p class="authors"><b>Amogh Mannekote</b>, Adam Davies, Guohao Li, Kristy Elizabeth Boyer, ChengXiang Zhai, Bonnie J. Dorr, Francesco Pinto</p>
+            <p class="authors">Conference on Language Modeling (COLM), 2025</p>
+            <div class="plinks"><a href="https://arxiv.org/abs/2507.02197">arXiv</a></div>
+          </div>
+          <figure class="pfig">
+            <svg viewBox="0 0 240 150" role="img" aria-label="Schematic: for each persona, the model's stated prediction and its simulated behavior sit at different points on the same scale.">
+              <text x="0" y="10">persona</text><text x="240" y="10" text-anchor="end">trust →</text>
+              <g class="rowset">
+                <line class="lm" x1="54" y1="30" x2="240" y2="30"/><line class="lm" x1="54" y1="56" x2="240" y2="56"/><line class="lm" x1="54" y1="82" x2="240" y2="82"/><line class="lm" x1="54" y1="108" x2="240" y2="108"/>
+                <text x="0" y="33">P1</text><text x="0" y="59">P2</text><text x="0" y="85">P3</text><text x="0" y="111">P4</text>
+                <line class="ac" x1="200" y1="30" x2="124" y2="30"/><circle class="fb" cx="200" cy="30" r="4.5"/><circle class="fi" cx="124" cy="30" r="4.5"/>
+                <line class="ac" x1="92" y1="56" x2="186" y2="56"/><circle class="fb" cx="92" cy="56" r="4.5"/><circle class="fi" cx="186" cy="56" r="4.5"/>
+                <line class="ac" x1="150" y1="82" x2="158" y2="82"/><circle class="fb" cx="150" cy="82" r="4.5"/><circle class="fi" cx="158" cy="82" r="4.5"/>
+                <line class="ac" x1="72" y1="108" x2="168" y2="108"/><circle class="fb" cx="72" cy="108" r="4.5"/><circle class="fi" cx="168" cy="108" r="4.5"/>
+              </g>
+              <circle class="fb" cx="58" cy="138" r="4"/><text x="66" y="141">stated</text>
+              <circle class="fi" cx="128" cy="138" r="4"/><text x="136" y="141">simulated</text>
+              <line class="ac" x1="196" y1="138" x2="212" y2="138"/><text x="216" y="141">gap</text>
+            </svg>
+            <figcaption>Schematic · stated belief vs. simulated behavior</figcaption>
+          </figure>
+        </li>
+        <li>
+          <div class="venue">AAAI 2025</div>
+          <div>
+            <h3 class="ptitle"><a href="https://arxiv.org/abs/2410.02110">Can LLMs Reliably Simulate Human Learner Actions? A Simulation Authoring Framework for Open-Ended Learning Environments</a></h3>
+            <!-- TODO(confirm): author list against the published AAAI version -->
+            <p class="authors"><b>Amogh Mannekote</b>, Adam Davies, Jina Kang, Kristy Elizabeth Boyer</p>
+            <p class="authors">Proceedings of the AAAI Conference on Artificial Intelligence (AAAI), 2025</p>
+            <div class="plinks"><a href="https://arxiv.org/abs/2410.02110">arXiv</a><a href="https://github.com/msamogh/hypmix">Code</a></div>
+          </div>
+          <figure class="pfig">
+            <svg viewBox="0 0 240 150" role="img" aria-label="Schematic: learner hypotheses H1 to H3 are composed into an LLM learner simulation whose action distribution is checked against a target.">
+              <rect class="fb" x="0" y="18" width="46" height="24" rx="5"/><text class="k" x="23" y="34" text-anchor="middle">H1</text>
+              <rect class="fb" x="0" y="54" width="46" height="24" rx="5"/><text class="k" x="23" y="70" text-anchor="middle">H2</text>
+              <rect class="fb" x="0" y="90" width="46" height="24" rx="5"/><text class="k" x="23" y="106" text-anchor="middle">H3</text>
+              <path class="ln" d="M46 30 C62 30 62 66 78 66 M46 66 L78 66 M46 102 C62 102 62 66 78 66"/>
+              <rect x="78" y="46" width="60" height="40" rx="6" class="fi"/>
+              <text x="108" y="63" text-anchor="middle" style="fill:var(--bg)">LLM</text><text x="108" y="75" text-anchor="middle" style="fill:var(--bg)">learner</text>
+              <path class="ln" d="M138 66 L152 66"/><path class="ln" d="M148 62 L152 66 L148 70"/>
+              <line class="ln" x1="158" y1="112" x2="240" y2="112"/>
+              <rect class="fm" x="162" y="96" width="10" height="16"/><rect class="fm" x="175" y="70" width="10" height="42"/><rect class="fm" x="188" y="56" width="10" height="56"/><rect class="fm" x="201" y="78" width="10" height="34"/><rect class="fm" x="214" y="94" width="10" height="18"/><rect class="fm" x="227" y="104" width="10" height="8"/>
+              <path class="ac" stroke-dasharray="3 3" d="M160 108 C172 94 176 66 186 56 C196 48 204 70 212 90 C220 104 230 108 240 110"/>
+              <text x="0" y="141">hypotheses</text><text x="108" y="141" text-anchor="middle">simulator</text><text x="240" y="141" text-anchor="end">actions vs. target</text>
+            </svg>
+            <figcaption>Schematic · composable learner hypotheses</figcaption>
+          </figure>
+        </li>
+        <li>
+          <div class="venue">COLING 2025</div>
+          <div>
+            <h3 class="ptitle"><a href="https://arxiv.org/abs/2406.07794">IndirectRequests: Making Task-Oriented Dialogue Datasets More Natural by Synthetically Generating Indirect User Requests</a></h3>
+            <!-- TODO(confirm): author list against the published COLING version -->
+            <p class="authors"><b>Amogh Mannekote</b>, Jinseok Nam, Ziming Li, Jian Gao, Kristy Elizabeth Boyer, Bonnie J. Dorr</p>
+            <p class="authors">Proceedings of the 31st International Conference on Computational Linguistics (COLING), 2025</p>
+            <div class="plinks"><a href="https://arxiv.org/abs/2406.07794">arXiv</a><a href="https://huggingface.co/datasets/msamogh/indirect-requests">Dataset</a></div>
+          </div>
+          <figure class="pfig">
+            <svg viewBox="0 0 240 150" role="img" aria-label="Illustrative example: a direct request and an indirect request that express the same restaurant reservation intent.">
+              <text x="0" y="10">direct</text>
+              <rect class="fb" x="0" y="16" width="204" height="26" rx="8"/><text class="t" x="10" y="33">Book a table for two at seven.</text>
+              <text x="0" y="60" class="a">indirect</text>
+              <rect x="36" y="66" width="204" height="40" rx="8" class="fb" style="stroke:var(--accent)"/>
+              <text class="t" x="46" y="83">Any chance a place has room</text><text class="t" x="46" y="98">for two of us around seven?</text>
+              <line class="lm" x1="0" y1="120" x2="240" y2="120"/>
+              <text x="0" y="136">same intent</text><text class="k" x="240" y="136" text-anchor="end">reserve(party=2, time=19:00)</text>
+            </svg>
+            <figcaption>Illustrative example · same intent, indirect form</figcaption>
+          </figure>
+        </li>
+      </ol>
+
+      <h3 class="sub">Dialogue systems and education</h3>
+      <ol class="plist">
+        <li><span class="y">2024</span><div><p class="t"><a href="https://txiaoyi.com/files/Tian_EDM_LLM_2024_camera-ready.pdf">Examining LLM Prompting Strategies for Automatic Evaluation of Learner-Created Computational Artifacts</a></p><p class="m">X. Tian, <b>A. Mannekote</b>, C. Solomon, Y. Song, C. F. Wise, T. McKlin, J. Barrett, K. E. Boyer, M. Israel. Educational Data Mining (EDM), 2024.</p></div></li>
+        <li><span class="y">2024</span><div><p class="t"><a href="https://arxiv.org/abs/2402.14155">Can Similarity-Based Domain-Ordering Reduce Catastrophic Forgetting for Intent Recognition?</a></p><p class="m"><b>A. Mannekote</b>, X. Tian, K. E. Boyer, B. J. Dorr. arXiv:2402.14155.</p></div></li>
+        <li><span class="y">2023</span><div><p class="t">Exploring Usability Issues in Instruction-Based and Schema-Based Authoring of Task-Oriented Dialogue Agents</p><p class="m"><b>A. Mannekote</b>, M. Celepkolu, J. B. Wiggins, K. E. Boyer. ACM Conference on Conversational User Interfaces (CUI), 2023.</p></div></li>
+        <li><span class="y">2023</span><div><p class="t"><a href="https://arxiv.org/abs/2307.06524">Agreement Tracking for Multi-Issue Negotiation Dialogues</a></p><p class="m"><b>A. Mannekote</b>, K. E. Boyer, B. J. Dorr. arXiv:2307.06524. <a href="https://huggingface.co/datasets/msamogh/gpt-negochat">Dataset</a></p></div></li>
+        <li><span class="y">2023</span><div><p class="t"><a href="https://arxiv.org/abs/2307.09021">Towards a Neural Era in Dialogue Management for Collaboration: A Literature Survey</a></p><p class="m"><b>A. Mannekote</b>. arXiv:2307.09021.</p></div></li>
+        <li><span class="y">2022</span><div><p class="t"><a href="https://dl.acm.org/doi/10.1145/3478432.3499110">Don't Just Paste Your Stacktrace: Shaping Discussion Forums in Introductory CS Courses</a></p><p class="m"><b>A. Mannekote</b>, M. Celepkolu, A. C. Galdo, K. E. Boyer, M. Israel, S. Heckman, K. Stephens-Martinez. ACM SIGCSE, 2022.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="experience" aria-labelledby="exp-h">
+  <div class="wrap sec-grid">
+    <div class="sec-label"><span class="n">04</span><h2 id="exp-h">Experience</h2></div>
+    <div>
+      <ul class="rows">
+        <!-- TODO(confirm): title and start month at Openstream.ai -->
+        <li><span class="d">2026 –</span><p class="w"><b>Research Scientist</b>, Openstream.ai</p><span class="loc">Remote</span></li>
+        <li><span class="d">2021 – 2026</span><p class="w"><b>Graduate Research Assistant</b>, University of Florida</p><span class="loc">Gainesville, FL</span></li>
+        <li><span class="d">2024.09 – 12</span><p class="w"><b>Research Intern</b>, Amazon Alexa <span>· MENTOR, in-context adaptation to feedback and tool-use instructions</span></p><span class="loc">Bellevue, WA</span></li>
+        <li><span class="d">2023.09 – 12</span><p class="w"><b>Research Intern</b>, Openstream.ai <span>· LLM semantic parsing for neuro-symbolic dialogue</span></p><span class="loc">Remote</span></li>
+        <li><span class="d">2023.05 – 09</span><p class="w"><b>Research Intern</b>, Amazon Alexa <span>· IndirectRequests</span></p><span class="loc">Bellevue, WA</span></li>
+        <li><span class="d">2020</span><p class="w"><b>Data Scientist</b>, Fractal Analytics &amp; Crux Intelligence <span>· Text-to-SQL evaluation</span></p><span class="loc">Bengaluru</span></li>
+        <li><span class="d">2019</span><p class="w"><b>Machine Learning Solutions Architect</b>, Rasa</p><span class="loc">Berlin</span></li>
+        <li><span class="d">2018 – 2019</span><p class="w"><b>Research Assistant</b>, Robert Bosch Centre for Cyber-Physical Systems, Indian Institute of Science</p><span class="loc">Bengaluru</span></li>
+        <li><span class="d">2018</span><p class="w"><b>Intern</b>, IBM Watson Machine Learning</p><span class="loc">Bengaluru</span></li>
+        <li><span class="d">2017 – 2018</span><p class="w"><b>Research Intern</b>, Stride.AI</p><span class="loc">Bengaluru</span></li>
+      </ul>
+      <h3 class="sub">Education</h3>
+      <ul class="rows">
+        <li><span class="d">2021 – 2026</span><p class="w"><b>Ph.D., Computer Science</b>, University of Florida <span>· <i>Neurosymbolic Authoring and Test-Time Compute Allocation for Generative Educational Simulations</i></span></p><span class="loc">Gainesville, FL</span></li>
+        <li><span class="d">2014 – 2018</span><p class="w"><b>B.E., Computer Science &amp; Engineering</b>, Ramaiah Institute of Technology</p><span class="loc">Bengaluru</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="news" aria-labelledby="news-h">
+  <div class="wrap sec-grid">
+    <div class="sec-label"><span class="n">05</span><h2 id="news-h">News &amp; software</h2></div>
+    <div class="split">
+      <div>
+        <h3 class="sub">News</h3>
+        <ul class="rows news">
+          <li><span class="d">2026.08</span><p class="w">Ph.D. in Computer Science conferred by the University of Florida for the dissertation <i>Neurosymbolic Authoring and Test-Time Compute Allocation for Generative Educational Simulations</i>.</p></li>
+          <!-- TODO(confirm): month joined Openstream.ai -->
+          <li><span class="d">2026</span><p class="w">Joined Openstream.ai as a Research Scientist to train models against behavioral targets.</p></li>
+          <li><span class="d">2025.10</span><p class="w">Belief-behavior consistency in role-playing agents appeared at <b>COLM 2025</b>.</p></li>
+          <li><span class="d">2025.02</span><p class="w">HYP-MIX appeared at <b>AAAI 2025</b>.</p></li>
+          <li><span class="d">2025.01</span><p class="w">IndirectRequests appeared at <b>COLING 2025</b>, with the dataset released on Hugging Face.</p></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="sub">Software &amp; data</h3>
+        <ul class="rows news">
+          <li><span class="d">Code</span><p class="w"><a href="https://github.com/msamogh/hypmix"><b>HYP-MIX</b></a> <span>· authoring and calibration framework for LLM learner simulations</span></p></li>
+          <li><span class="d">Dataset</span><p class="w"><a href="https://huggingface.co/datasets/msamogh/indirect-requests"><b>IndirectRequests</b></a> <span>· indirect user requests for schema-guided dialogue</span></p></li>
+          <li><span class="d">Dataset</span><p class="w"><a href="https://huggingface.co/datasets/msamogh/gpt-negochat"><b>GPT-NegoChat</b></a> <span>· multi-issue negotiation dialogues with agreement-state annotations</span></p></li>
+          <!-- TODO(confirm): LLM4Qual repository URL -->
+          <li><span class="d">Library</span><p class="w"><b>LLM4Qual</b> <span>· emulates human annotation workflows for qualitative text analysis in privacy-sensitive settings</span></p></li>
+          <li><span class="d">Library</span><p class="w"><a href="https://github.com/msamogh/nonechucks"><b>nonechucks</b></a> <span>· PyTorch datasets and samplers that skip invalid samples</span></p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
-    <div class="section-head">
-      <p class="kicker">Workbench</p>
-      <h2>{{ site.data.workbench.tagline }}.</h2>
-      <p class="section-sub">
-        Outside research, I build small, sharp tools with coding agents, each aimed at one specific way my focus leaks.
-        They're shaped to exactly one person, live in one Mac launcher, and share one manifest.
-      </p>
+    <p class="label" id="contact-h">Correspondence</p>
+    <p class="big">msamogh <span class="ob">[at]</span> gmail <span class="ob">[dot]</span> com</p>
+    <div class="links">
+      <a class="btn ghost" href="https://scholar.google.com/citations?user=Vq8XjxAAAAAJ">Google Scholar</a>
+      <a class="btn ghost" href="https://github.com/msamogh">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/msamogh">LinkedIn</a>
+      <a class="btn ghost" href="https://huggingface.co/msamogh">Hugging Face</a>
+      <a class="btn ghost" href="images/resume.pdf">CV</a>
     </div>
-    <div class="app-tiles">
-      {% for app in site.data.workbench.apps %}
-      <a class="tile" href="{{ '/workbench/' | relative_url }}#{{ app.id }}" style="--c1: {{ app.color[0] }}; --c2: {{ app.color[1] }}">
-        <img src="{{ '/images/workbench/' | append: app.id | append: '.png' | relative_url }}" alt="" width="64" height="64" loading="lazy" decoding="async">
-        <span class="tile-name">{{ app.name }}</span>
-        <span class="tile-tag">{{ app.tagline }}</span>
-        <span class="tile-cat">{{ app.category }}</span>
-      </a>
-      {% endfor %}
-    </div>
-    <a class="more" href="{{ '/workbench/' | relative_url }}">Tour the workbench <span aria-hidden="true">→</span></a>
+    <div class="foot"><span>© 2026 Amogh Mannekote</span><a href="#top">Back to top</a></div>
   </div>
 </section>
 
-<section class="wrap section two-col">
-  <div>
-    <div class="section-head"><p class="kicker">Lately</p><h2>News</h2></div>
-    <ul class="timeline">
-      <li><span class="when">2025</span><span>Belief-behavior consistency in role-playing agents at <b>COLM 2025</b>. <a href="https://arxiv.org/abs/2507.02197" target="_blank" rel="noopener">Paper</a></span></li>
-      <li><span class="when">2025</span><span>HYP-MIX, simulating learner actions with LLMs, at <b>AAAI 2025</b>. <a href="https://arxiv.org/abs/2410.02110" target="_blank" rel="noopener">Paper</a></span></li>
-      <li><span class="when">2025</span><span>IndirectRequests at <b>COLING 2025</b>, with the dataset public on <a href="https://huggingface.co/datasets/msamogh/indirect-requests" target="_blank" rel="noopener">Hugging Face</a>.</span></li>
-      <li><span class="when">2024</span><span>Second research internship at Amazon Alexa: MENTOR, measuring in-context adaptation to feedback and tool-use instructions.</span></li>
-      <li><span class="when">2024</span><span>Attended the <a href="https://cui.acm.org/workshops/CHI2024/" target="_blank" rel="noopener">CUI@CHI workshop</a>; joined the <a href="https://invite.illinois.edu/" target="_blank" rel="noopener">INVITE AI Institute</a>.</span></li>
-    </ul>
-  </div>
-  <div>
-    <div class="section-head"><p class="kicker">Industry</p><h2>Experience</h2></div>
-    <ul class="timeline">
-      <li><span class="when">2024</span><span>Research Intern, <b>Amazon Alexa</b></span></li>
-      <li><span class="when">2023</span><span>Research Intern, <b>Openstream.ai</b></span></li>
-      <li><span class="when">2023</span><span>Research Intern, <b>Amazon Alexa</b></span></li>
-      <li><span class="when">2020</span><span>Data Scientist, <b>Fractal Analytics &amp; Crux Intelligence</b></span></li>
-      <li><span class="when">2019</span><span>Machine Learning Solutions Architect, <b>Rasa</b>, Berlin</span></li>
-      <li><span class="when">2018–19</span><span>Research Assistant, <b>Indian Institute of Science</b></span></li>
-      <li><span class="when">2018</span><span>Intern, <b>IBM Watson Machine Learning</b></span></li>
-    </ul>
-  </div>
-</section>
+</main>
 
-<section class="wrap section two-col small">
-  <div>
-    <div class="section-head"><p class="kicker">Open source</p></div>
-    <p><a href="https://github.com/msamogh/nonechucks" target="_blank" rel="noopener"><b>nonechucks</b></a>: wrappers for PyTorch datasets, samplers and transforms that drop invalid samples on the fly. It made GitHub's trending Python list.</p>
-  </div>
-  <div>
-    <div class="section-head"><p class="kicker">Service &amp; awards</p></div>
-    <p>Reviewer for ACM GROUP 2025 and ACL 2024. Graduate Fellowship (2022).</p>
-  </div>
-</section>
+<script>
+(function(){
+  var top=document.getElementById('top');
+  addEventListener('scroll',function(){top.classList.toggle('scrolled',scrollY>8)},{passive:true});
+
+  var svg=document.getElementById('pop'); if(!svg) return;
+  var NS='http://www.w3.org/2000/svg', fig=document.getElementById('fig'), state=document.getElementById('fig-state');
+  var g=document.getElementById('pop-dots'), curve=document.getElementById('pop-curve');
+  var X0=20, X1=460, BASE=268, TOP=26, BINS=22, N=180, bw=(X1-X0)/BINS;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function gauss(x,m,s){return Math.exp(-.5*((x-m)/s)*((x-m)/s))}
+  function dens(x){return .62*gauss(x,.33,.095)+.38*gauss(x,.72,.075)}
+  // allocate N agents to bins by largest remainder
+  var w=[],tot=0,i,k;
+  for(i=0;i<BINS;i++){w[i]=dens((i+.5)/BINS);tot+=w[i]}
+  var cnt=[],rem=[],used=0;
+  for(i=0;i<BINS;i++){var e=N*w[i]/tot;cnt[i]=Math.floor(e);rem.push([e-cnt[i],i]);used+=cnt[i]}
+  rem.sort(function(a,b){return b[0]-a[0]});
+  for(i=0;i<N-used;i++)cnt[rem[i][1]]++;
+  var mx=Math.max.apply(null,cnt), gap=Math.min(bw*.92,(BASE-TOP)/mx), r=Math.min(gap,bw)*.36;
+  var targets=[];
+  for(i=0;i<BINS;i++)for(k=0;k<cnt[i];k++)targets.push([X0+(i+.5)*bw,BASE-(k+.5)*gap]);
+  // target curve, scaled so the curve passes over the top of each stack
+  var scale=(N*gap)/tot, d='';
+  for(i=0;i<=120;i++){var x=i/120;d+=(i?'L':'M')+(X0+x*(X1-X0)).toFixed(1)+' '+(BASE-dens(x)*scale).toFixed(1)}
+  curve.setAttribute('d',d);
+  var dots=[];
+  for(i=0;i<N;i++){var c=document.createElementNS(NS,'circle');c.setAttribute('r',r.toFixed(2));g.appendChild(c);dots.push({el:c})}
+  function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+  function place(o,x,y){o.el.setAttribute('cx',x.toFixed(1));o.el.setAttribute('cy',y.toFixed(1))}
+  var raf;
+  function run(){
+    cancelAnimationFrame(raf); fig.classList.remove('done'); state.classList.remove('on'); state.lastChild.textContent='Uncalibrated';
+    // uncalibrated start: one broad mode, scattered vertically
+    var order=targets.slice().sort(function(){return Math.random()-.5});
+    dots.forEach(function(o,j){
+      var u=(Math.random()+Math.random()+Math.random())/3;
+      o.x0=X0+12+u*(X1-X0-24); o.y0=TOP+Math.random()*(BASE-TOP-8);
+      o.x1=order[j][0]; o.y1=order[j][1]; o.dl=Math.random()*.35; place(o,o.x0,o.y0);
+    });
+    if(reduce){dots.forEach(function(o){place(o,o.x1,o.y1)});finish();return}
+    var t0=null, HOLD=700, DUR=1500;
+    function step(ts){
+      if(t0===null)t0=ts; var t=(ts-t0-HOLD)/DUR;
+      if(t<0){raf=requestAnimationFrame(step);return}
+      dots.forEach(function(o){var p=Math.max(0,Math.min(1,(t-o.dl)/(1-.35)));p=ease(p);place(o,o.x0+(o.x1-o.x0)*p,o.y0+(o.y1-o.y0)*p)});
+      if(t<1)raf=requestAnimationFrame(step);else finish();
+    }
+    raf=requestAnimationFrame(step);
+  }
+  function finish(){fig.classList.add('done');state.classList.add('on');state.lastChild.textContent='Calibrated to target'}
+  document.getElementById('fig-run').addEventListener('click',run);
+  run();
+})();
+</script>
+</body>
+</html>
