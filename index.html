@@ -22,7 +22,7 @@
  "jobTitle":"Applied Research Scientist","worksFor":{"@type":"Organization","name":"Openstream.ai"},
  "alumniOf":{"@type":"CollegeOrUniversity","name":"University of Florida"},
  "knowsAbout":["LLM behavioral simulation","Generative agent-based modeling","Test-time compute allocation","Reinforcement learning","Synthetic data generation"],
- "sameAs":["https://scholar.google.com/citations?user=Vq8XjxAAAAAJ","https://github.com/msamogh","https://www.linkedin.com/in/msamogh","https://huggingface.co/msamogh"]}
+ "sameAs":["https://www.semanticscholar.org/author/146123222","https://github.com/msamogh","https://www.linkedin.com/in/msamogh","https://huggingface.co/msamogh"]}
 </script>
 <style>
 :root{
@@ -141,7 +141,9 @@ a.tag:hover{border-color:var(--accent);color:var(--accent-ink)}
 h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:56px 0 8px}
 .plist{list-style:none;margin:0;padding:0}
 .plist li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:16px 0;border-bottom:1px solid var(--rule)}
-.plist .y{font:500 13px/1.6 var(--mono);color:var(--muted)}
+.plist .y{font:500 13px/1.6 var(--mono);color:var(--muted);display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.kind{font:500 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--rule);border-radius:999px;padding:4px 8px;color:var(--ink-2)}
+.kind.pre{border-style:dashed;color:var(--muted)}
 .plist .t{font-weight:550;margin:0 0 3px}
 .plist .t a{text-decoration:none}
 .plist .t a:hover{text-decoration:underline}
@@ -176,6 +178,15 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
 .split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,5vw,72px)}
 .split h3.sub:first-child{margin-top:0}
 
+/* outside research */
+.side{padding:clamp(40px,5vw,64px) 0}
+.side-body p{margin:0 0 18px;color:var(--ink-2)}
+.chips{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips a{display:inline-block;font:500 13px/1 var(--sans);border:1px solid var(--rule);border-radius:999px;padding:8px 12px;text-decoration:none;color:var(--ink-2)}
+.chips a:hover{border-color:var(--ink);color:var(--ink)}
+.more{font:550 14px/1 var(--sans);text-decoration:none}
+.more:hover{color:var(--accent-ink)}
+
 /* contact */
 .contact{padding:clamp(72px,10vw,140px) 0 48px;border-top:1px solid var(--rule)}
 .contact .big{font:700 clamp(36px,6.4vw,88px)/1 var(--display);letter-spacing:-.045em;margin:18px 0 28px;word-break:break-word}
@@ -200,6 +211,7 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
   .threads{grid-template-columns:1fr}
   .thread{padding:22px 20px}
   .feat li,.plist li{grid-template-columns:1fr;gap:6px}
+  .plist .y{flex-direction:row;align-items:center;gap:10px}
   .pfig{grid-column:1;margin-top:8px}
   .venue{padding-top:0}
   .rows li,.rows.news li{grid-template-columns:1fr;gap:2px}
@@ -235,7 +247,7 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
       <div class="cta">
         <a class="btn" href="#research">Research program</a>
         <a class="btn ghost" href="images/resume.pdf">CV (PDF)</a>
-        <a class="btn ghost" href="https://scholar.google.com/citations?user=Vq8XjxAAAAAJ">Google Scholar</a>
+        <a class="btn ghost" href="https://www.semanticscholar.org/author/146123222">Semantic Scholar</a>
       </div>
     </div>
 
@@ -383,14 +395,17 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
         </li>
       </ol>
 
-      <h3 class="sub">Dialogue systems and education</h3>
+      <h3 class="sub">All other publications</h3>
       <ol class="plist">
-        <li><span class="y">2024</span><div><p class="t"><a href="https://txiaoyi.com/files/Tian_EDM_LLM_2024_camera-ready.pdf">Examining LLM Prompting Strategies for Automatic Evaluation of Learner-Created Computational Artifacts</a></p><p class="m">X. Tian, <b>A. Mannekote</b>, C. Solomon, Y. Song, C. F. Wise, T. McKlin, J. Barrett, K. E. Boyer, M. Israel. Educational Data Mining (EDM), 2024.</p></div></li>
-        <li><span class="y">2024</span><div><p class="t"><a href="https://arxiv.org/abs/2402.14155">Can Similarity-Based Domain-Ordering Reduce Catastrophic Forgetting for Intent Recognition?</a></p><p class="m"><b>A. Mannekote</b>, X. Tian, K. E. Boyer, B. J. Dorr. arXiv:2402.14155.</p></div></li>
-        <li><span class="y">2023</span><div><p class="t">Exploring Usability Issues in Instruction-Based and Schema-Based Authoring of Task-Oriented Dialogue Agents</p><p class="m"><b>A. Mannekote</b>, M. Celepkolu, J. B. Wiggins, K. E. Boyer. ACM Conference on Conversational User Interfaces (CUI), 2023.</p></div></li>
-        <li><span class="y">2023</span><div><p class="t"><a href="https://arxiv.org/abs/2307.06524">Agreement Tracking for Multi-Issue Negotiation Dialogues</a></p><p class="m"><b>A. Mannekote</b>, K. E. Boyer, B. J. Dorr. arXiv:2307.06524. <a href="https://huggingface.co/datasets/msamogh/gpt-negochat">Dataset</a></p></div></li>
-        <li><span class="y">2023</span><div><p class="t"><a href="https://arxiv.org/abs/2307.09021">Towards a Neural Era in Dialogue Management for Collaboration: A Literature Survey</a></p><p class="m"><b>A. Mannekote</b>. arXiv:2307.09021.</p></div></li>
-        <li><span class="y">2022</span><div><p class="t"><a href="https://dl.acm.org/doi/10.1145/3478432.3499110">Don't Just Paste Your Stacktrace: Shaping Discussion Forums in Introductory CS Courses</a></p><p class="m"><b>A. Mannekote</b>, M. Celepkolu, A. C. Galdo, K. E. Boyer, M. Israel, S. Heckman, K. Stephens-Martinez. ACM SIGCSE, 2022.</p></div></li>
+        <li><span class="y">2024<span class="kind">Journal</span></span><div><p class="t"><a href="https://doi.org/10.3389/frai.2024.1460364">Large Language Models for Whole-Learner Support: Opportunities and Challenges</a></p><p class="m"><b>A. Mannekote</b>, A. Davies, J. D. Pinto, S. Zhang, D. Olds, N. L. Schroeder, B. Lehman, D. Zapata-Rivera, C. Zhai. <i>Frontiers in Artificial Intelligence</i> 7, 2024.</p></div></li>
+        <li><span class="y">2024<span class="kind pre">Preprint</span></span><div><p class="t"><a href="https://arxiv.org/abs/2404.13074">Towards Compositionally Generalizable Semantic Parsing in Large Language Models: A Survey</a></p><p class="m"><b>A. Mannekote</b>. arXiv:2404.13074.</p></div></li>
+        <li><span class="y">2024<span class="kind">Conference</span></span><div><p class="t"><a href="https://txiaoyi.com/files/Tian_EDM_LLM_2024_camera-ready.pdf">Examining LLM Prompting Strategies for Automatic Evaluation of Learner-Created Computational Artifacts</a></p><p class="m">X. Tian, <b>A. Mannekote</b>, C. E. Solomon, Y. Song, C. F. Wise, T. McKlin, J. Barrett, K. E. Boyer, M. Israel. Educational Data Mining (EDM), 2024.</p></div></li>
+        <li><span class="y">2024<span class="kind pre">Preprint</span></span><div><p class="t"><a href="https://arxiv.org/abs/2402.14155">Can Similarity-Based Domain-Ordering Reduce Catastrophic Forgetting for Intent Recognition?</a></p><p class="m"><b>A. Mannekote</b>, X. Tian, K. E. Boyer, B. J. Dorr. arXiv:2402.14155.</p></div></li>
+        <li><span class="y">2023<span class="kind">Conference</span></span><div><p class="t"><a href="https://doi.org/10.1145/3571884.3604310">Exploring Usability Issues in Instruction-Based and Schema-Based Authoring of Task-Oriented Dialogue Agents</a></p><p class="m"><b>A. Mannekote</b>, M. Celepkolu, J. B. Wiggins, K. E. Boyer. ACM Conference on Conversational User Interfaces (CUI), 2023.</p></div></li>
+        <li><span class="y">2023<span class="kind pre">Preprint</span></span><div><p class="t"><a href="https://arxiv.org/abs/2307.06524">Agreement Tracking for Multi-Issue Negotiation Dialogues</a></p><p class="m"><b>A. Mannekote</b>, B. J. Dorr, K. E. Boyer. arXiv:2307.06524. <a href="https://huggingface.co/datasets/msamogh/gpt-negochat">Dataset</a></p></div></li>
+        <li><span class="y">2023<span class="kind pre">Preprint</span></span><div><p class="t"><a href="https://arxiv.org/abs/2307.09021">Towards a Neural Era in Dialogue Management for Collaboration: A Literature Survey</a></p><p class="m"><b>A. Mannekote</b>. arXiv:2307.09021.</p></div></li>
+        <li><span class="y">2022<span class="kind">Conference</span></span><div><p class="t"><a href="https://doi.org/10.1145/3478432.3499110">Don't Just Paste Your Stacktrace: Shaping Discussion Forums in Introductory CS Courses</a></p><p class="m"><b>A. Mannekote</b>, M. Celepkolu, A. C. Galdo, K. E. Boyer, M. Israel, S. Heckman, K. Stephens-Martinez. ACM Technical Symposium on Computer Science Education (SIGCSE), 2022.</p></div></li>
+        <li><span class="y">2017<span class="kind">Chapter</span></span><div><p class="t"><a href="https://doi.org/10.1007/978-981-10-6418-0_9">K9, for Things You Care About</a></p><p class="m">R. Vats, <b>A. Mannekote</b>, D. D. Rao. In <i>Applications of Cognitive Computing Systems and IBM Watson</i>, Springer, 2017.</p></div></li>
       </ol>
     </div>
   </div>
@@ -423,7 +438,7 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
 
 <section class="sec" id="news" aria-labelledby="news-h">
   <div class="wrap sec-grid">
-    <div class="sec-label"><span class="n">05</span><h2 id="news-h">News &amp; software</h2></div>
+    <div class="sec-label"><span class="n">05</span><h2 id="news-h">News &amp; artifacts</h2></div>
     <div class="split">
       <div>
         <h3 class="sub">News</h3>
@@ -436,7 +451,7 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
         </ul>
       </div>
       <div>
-        <h3 class="sub">Software &amp; data</h3>
+        <h3 class="sub">Research code &amp; data</h3>
         <ul class="rows news">
           <li><span class="d">Code</span><p class="w"><a href="https://github.com/msamogh/hypmix"><b>HYP-MIX</b></a> <span>· authoring and calibration framework for LLM learner simulations</span></p></li>
           <li><span class="d">Dataset</span><p class="w"><a href="https://huggingface.co/datasets/msamogh/indirect-requests"><b>IndirectRequests</b></a> <span>· indirect user requests for schema-guided dialogue</span></p></li>
@@ -448,18 +463,31 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
   </div>
 </section>
 
+<section class="sec side" id="personal" aria-labelledby="personal-h">
+  <div class="wrap sec-grid">
+    <div class="sec-label"><span class="n">06</span><h2 id="personal-h">Outside research</h2></div>
+    <div class="side-body">
+      <p>I also design and build personal software with coding agents: a focus timer with a cloud-synced goal tree, browser extensions that rewrite feeds before I see them, an encrypted local finance dashboard, and a lab for testing parenting strategies on simulated children.</p>
+      <ul class="chips" aria-label="Personal software">
+        <li><a href="software/#ratchet">Ratchet</a></li><li><a href="software/#torque">Torque</a></li><li><a href="software/#sieve">Sieve</a></li><li><a href="software/#debait">DeBait</a></li><li><a href="software/#treasury">Treasury</a></li><li><a href="software/#otp">OTP Clipboard</a></li><li><a href="software/#parenting-probe">Parenting Probe</a></li>
+      </ul>
+      <a class="more" href="software/">Personal software <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contact" aria-labelledby="contact-h">
   <div class="wrap">
     <p class="label" id="contact-h">Correspondence</p>
     <p class="big">msamogh <span class="ob">[at]</span> gmail <span class="ob">[dot]</span> com</p>
     <div class="links">
-      <a class="btn ghost" href="https://scholar.google.com/citations?user=Vq8XjxAAAAAJ">Google Scholar</a>
+      <a class="btn ghost" href="https://www.semanticscholar.org/author/146123222">Semantic Scholar</a>
       <a class="btn ghost" href="https://github.com/msamogh">GitHub</a>
       <a class="btn ghost" href="https://www.linkedin.com/in/msamogh">LinkedIn</a>
       <a class="btn ghost" href="https://huggingface.co/msamogh">Hugging Face</a>
       <a class="btn ghost" href="images/resume.pdf">CV</a>
     </div>
-    <div class="foot"><span>© 2026 Amogh Mannekote</span><a href="#top">Back to top</a></div>
+    <div class="foot"><span>© 2026 Amogh Mannekote</span><span><a href="software/">Personal software</a> · <a href="#top">Back to top</a></span></div>
   </div>
 </section>
 
