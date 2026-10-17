@@ -112,8 +112,10 @@ h2{font:700 clamp(26px,2.6vw,34px)/1.1 var(--display);letter-spacing:-.03em;marg
 p{max-width:68ch}
 
 /* about */
-.about{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:clamp(24px,4vw,56px);align-items:start}
-.about img{width:100%;height:auto;aspect-ratio:1;border-radius:12px;display:block;background:var(--bg-2);filter:saturate(.92)}
+.about{display:block}
+.id{display:flex;align-items:center;gap:16px}
+.id .label{margin:0}
+.avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;display:block;background:var(--bg-2);border:1px solid var(--rule)}
 
 /* research threads */
 .threads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden;margin-top:40px}
@@ -207,7 +209,7 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
   .role{flex-direction:column}
   .role span+span::before{display:none}
   .about{grid-template-columns:1fr}
-  .about img{max-width:180px}
+  .avatar{width:60px;height:60px}
   .threads{grid-template-columns:1fr}
   .thread{padding:22px 20px}
   .feat li,.plist li{grid-template-columns:1fr;gap:6px}
@@ -240,7 +242,7 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <p class="label">LLM behavioral simulation</p>
+      <div class="id"><img class="avatar" src="images/portrait-240.jpg" width="72" height="72" alt="Portrait of Amogh Mannekote" fetchpriority="high"><p class="label">LLM behavioral simulation</p></div>
       <h1><span>Amogh</span><span>Mannekote</span></h1>
       <p class="role"><span>Applied Research Scientist, Openstream.ai</span><span>Ph.D., University of Florida</span></p>
       <p class="thesis">I build language-model simulations of human behavior that <em>hold up at the population level</em>, so that researchers can run studies on simulated people when recruiting real ones is the bottleneck.</p>
@@ -276,7 +278,6 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
         <p class="lede">My PhD in Computer Science at the University of Florida, advised by <a href="https://www.cise.ufl.edu/boyer-kristy/">Kristy Boyer</a> and <a href="https://www.cise.ufl.edu/dorr-bonnie-j/">Bonnie Dorr</a>, developed generative agent-based models of learners and calibrated them to population-level behavioral targets through test-time compute allocation.</p>
         <p class="lede">My current work trains models against those behavioral targets directly with reinforcement learning. Before and during the PhD, I worked on task-oriented dialogue and synthetic data generation at Amazon Alexa, Openstream.ai, and Rasa.</p>
       </div>
-      <img src="images/portrait-460.jpg" srcset="images/portrait-240.jpg 240w, images/portrait-460.jpg 460w" sizes="(max-width:640px) 180px, 220px" width="460" height="460" alt="Portrait of Amogh Mannekote" decoding="async">
     </div>
   </div>
 </section>
