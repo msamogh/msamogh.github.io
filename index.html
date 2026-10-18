@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Amogh Mannekote</title>
-<meta name="description" content="Amogh Mannekote builds LLM simulations of human behavior calibrated to population-level targets.">
+<meta name="description" content="Amogh Mannekote studies when language models can stand in for people, as simulated users, learners, and populations, and builds the methods that make them faithful.">
 <meta name="author" content="Amogh Mannekote">
 <link rel="canonical" href="https://msamogh.github.io/">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Amogh Mannekote">
-<meta property="og:description" content="Amogh Mannekote builds LLM simulations of human behavior calibrated to population-level targets.">
+<meta property="og:description" content="Amogh Mannekote studies when language models can stand in for people, as simulated users, learners, and populations, and builds the methods that make them faithful.">
 <meta property="og:url" content="https://msamogh.github.io/">
 <meta property="og:image" content="https://msamogh.github.io/images/portrait-460.jpg">
 <meta name="twitter:card" content="summary">
@@ -113,7 +113,7 @@ p{max-width:68ch}
 
 /* about */
 .about{display:block}
-.avatar{width:136px;height:136px;border-radius:50%;object-fit:cover;display:block;background:var(--bg-2);box-shadow:0 0 0 5px var(--bg),0 0 0 6px var(--rule);margin:6px 0 36px 6px}
+.avatar{width:176px;height:176px;border-radius:50%;object-fit:cover;display:block;background:var(--bg-2);box-shadow:0 0 0 6px var(--bg),0 0 0 7px var(--rule);margin:7px 0 40px 7px}
 
 /* research threads */
 .threads{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:14px;overflow:hidden;margin-top:40px}
@@ -207,7 +207,7 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
   .role{flex-direction:column}
   .role span+span::before{display:none}
   .about{grid-template-columns:1fr}
-  .avatar{width:104px;height:104px;margin-bottom:28px}
+  .avatar{width:128px;height:128px;margin-bottom:30px}
   .threads{grid-template-columns:1fr}
   .thread{padding:22px 20px}
   .feat li,.plist li{grid-template-columns:1fr;gap:6px}
@@ -240,10 +240,10 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <img class="avatar" src="images/portrait-460.jpg" srcset="images/portrait-240.jpg 240w, images/portrait-460.jpg 460w" sizes="(max-width:640px) 104px, 136px" width="136" height="136" alt="Portrait of Amogh Mannekote" fetchpriority="high">
+      <img class="avatar" src="images/portrait-460.jpg" srcset="images/portrait-240.jpg 240w, images/portrait-460.jpg 460w" sizes="(max-width:640px) 128px, 176px" width="176" height="176" alt="Portrait of Amogh Mannekote" fetchpriority="high">
       <h1><span>Amogh</span><span>Mannekote</span></h1>
       <p class="role"><span>Applied Research Scientist, Openstream.ai</span><span>Ph.D., University of Florida</span></p>
-      <p class="thesis">I build language-model simulations of human behavior that <em>hold up at the population level</em>, so that researchers can run studies on simulated people when recruiting real ones is the bottleneck.</p>
+      <p class="thesis">I study when language models can <em>stand in for people</em>, as simulated users, learners, and whole populations, and I build the methods that make those stand-ins faithful enough to trust.</p>
       <div class="cta">
         <a class="btn" href="#research">Research program</a>
         <a class="btn ghost" href="images/resume.pdf">CV (PDF)</a>
@@ -294,8 +294,8 @@ h3.sub{font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:upperca
         </article>
         <article class="thread">
           <span class="k">B · Calibration</span>
-          <h3>Calibration as test-time compute allocation</h3>
-          <p>My dissertation holds the generator and the target specification fixed and asks how inference-time compute should be distributed across a simulated population. Across fifty behavioral targets for simulated pair programming, whether a target is defined per session or over the whole batch predicts both its difficulty and which allocation strategy works.</p>
+          <h3>Simulations that hold up at the population level</h3>
+          <p>The aim is a simulated population that researchers can run studies on when recruiting real participants is the bottleneck. To get there, my dissertation treats calibration as test-time compute allocation, holding the generator and the target specification fixed and asking how inference-time compute should be distributed across the population. Across fifty behavioral targets for simulated pair programming, whether a target is defined per session or over the whole batch predicts both its difficulty and which allocation strategy works.</p>
           <div class="refs"><span class="tag">Dissertation, 2026</span></div>
         </article>
         <article class="thread">
