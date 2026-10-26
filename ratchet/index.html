@@ -243,6 +243,27 @@ footer{border-top:1px solid var(--rule);padding:28px 0 40px;font-size:14px;color
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--ink-2)}
 
+
+/* the pocket Ratchet: the page doing to its visitor what the app does */
+.pocket{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:grid;justify-items:end;gap:10px;pointer-events:none;max-width:min(340px,calc(100vw - 32px))}
+.pocket > *{pointer-events:auto}
+.pk-chip{display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--sans);padding:9px 12px 9px 10px;border-radius:999px;background:color-mix(in srgb,var(--card) 88%,transparent);
+  border:1px solid var(--rule);box-shadow:var(--shadow);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--ink-2);cursor:pointer;font-variant-numeric:tabular-nums}
+.pk-chip i{width:8px;height:8px;border-radius:50%;background:var(--go);flex:none}
+.pk-chip.drift i{background:var(--warn)}
+.pk-chip b{color:var(--ink);font-weight:700}
+.pk-card{background:var(--ink);color:var(--bg);border-radius:18px;padding:14px 16px;box-shadow:var(--shadow);display:grid;gap:10px;width:100%;
+  transform:translateY(10px) scale(.97);opacity:0;transition:opacity .3s ease,transform .3s cubic-bezier(.2,1.4,.4,1)}
+.pk-card.on{opacity:1;transform:none}
+.pk-card p{margin:0;font:600 15px/1.35 var(--display)}
+.pk-card p span{display:block;font:400 13.5px/1.45 var(--sans);opacity:.75;margin-top:3px}
+.pk-card .row{display:flex;gap:8px;flex-wrap:wrap}
+.pk-card button{font:600 13px/1 var(--sans);border:0;border-radius:999px;padding:9px 12px;cursor:pointer;background:color-mix(in srgb,var(--bg) 16%,transparent);color:var(--bg)}
+.pk-card button.yes{background:var(--accent);color:#fff}
+.pk-dog{display:flex;gap:10px;align-items:flex-start}
+.pk-dog em{font-style:normal;font-size:30px;line-height:1;animation:wag .5s ease-in-out 3}
+@keyframes wag{50%{transform:rotate(-12deg)}}
+@media (prefers-reduced-motion:reduce){.pk-card{transition:none}.pk-dog em{animation:none}}
 /* motion */
 .rise{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
 .rise.in{opacity:1;transform:none}
@@ -528,6 +549,71 @@ footer a{color:var(--ink-2)}
     if (t % 14 === 11) ask.classList.remove("on");
     paint();
   }, 1000);
+})();
+</script>
+
+<div class="pocket" id="pocket" aria-live="polite">
+  <div class="pk-card" id="pk-card" hidden></div>
+  <button type="button" class="pk-chip" id="pk-chip" title="This page is running a tiny Ratchet on you">
+    <i></i><span>Reading about Ratchet</span><b id="pk-time">0:00</b>
+  </button>
+</div>
+
+<script>
+// The page does to you what Ratchet does: times your visit, asks if you're
+// still on it when you go quiet, and notices when you wander to another tab,
+// then hands you a Breadcrumb back to where you were reading.
+(function () {
+  var chip = document.getElementById("pk-chip"), time = document.getElementById("pk-time"), card = document.getElementById("pk-card");
+  var start = Date.now(), awayAt = 0, lastMove = Date.now(), asked = 0, drifted = 0, shown = false, hideT = 0;
+  var names = { why: "the ADHD tax", how: "how it works", features: "what's inside", research: "why it works", faq: "the FAQ" };
+  var place = null;
+  var seen = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) place = e.target.id; });
+  }, { rootMargin: "-40% 0px -50% 0px" });
+  ["why", "how", "features", "research", "faq"].forEach(function (id) { var el = document.getElementById(id); if (el) seen.observe(el); });
+  function fmt(ms) { var s = Math.floor(ms / 1000), m = Math.floor(s / 60); s %= 60; return m + ":" + (s < 10 ? "0" : "") + s; }
+  function show(html, ms) {
+    clearTimeout(hideT);
+    card.innerHTML = html; card.hidden = false; shown = true;
+    requestAnimationFrame(function () { card.classList.add("on"); });
+    if (ms) hideT = setTimeout(hide, ms);
+  }
+  function hide() { card.classList.remove("on"); shown = false; setTimeout(function () { if (!shown) card.hidden = true; }, 300); }
+  setInterval(function () {
+    if (document.hidden) return;
+    time.textContent = fmt(Date.now() - start);
+    // Quiet for a while: the check-in, as the app asks it (twice a visit at most).
+    if (!shown && asked < 2 && Date.now() - lastMove > 22000 && Date.now() - start > 15000) {
+      asked++;
+      show('<p>Still on it?<span>You\'ve been quiet for a bit. This is the one tap Ratchet asks every 20 minutes.</span></p>'
+        + '<div class="row"><button class="yes" data-pk="on">Yes, still reading</button><button data-pk="off">I drifted</button></div>');
+    }
+  }, 1000);
+  ["scroll", "mousemove", "keydown", "touchstart"].forEach(function (ev) { addEventListener(ev, function () { lastMove = Date.now(); }, { passive: true }); });
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) { awayAt = Date.now(); chip.classList.add("drift"); return; }
+    chip.classList.remove("drift");
+    var gone = awayAt ? Date.now() - awayAt : 0;
+    awayAt = 0;
+    if (gone < 4000) return;
+    drifted++;
+    var back = place && names[place] ? '<button class="yes" data-pk="back">Back to ' + names[place] + '</button>' : "";
+    show('<div class="pk-dog"><em aria-hidden="true">🐕</em><p>' + (drifted > 1 ? "Gone again! " : "Welcome back! ") + 'You were away ' + fmt(gone) + '.'
+      + '<span>See? I noticed before you did. That\'s the whole idea.' + (back ? " Here's your Breadcrumb:" : "") + '</span></p></div>'
+      + '<div class="row">' + back + '<button data-pk="x">Thanks, Torque</button></div>', 14000);
+  });
+  card.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-pk]"); if (!b) return;
+    var k = b.dataset.pk;
+    if (k === "on") show("<p>Good. +20 points.<span>That's all a check-in is: one tap, then back to it.</span></p>", 3500);
+    else if (k === "off") show("<p>Honest. No guilt.<span>Drift is normal. Ratchet just makes sure it never goes unnoticed for long.</span></p>", 4500);
+    else if (k === "back") { hide(); var el = document.getElementById(place); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+    else hide();
+  });
+  chip.addEventListener("click", function () {
+    show("<p>A tiny Ratchet is timing this visit.<span>Go quiet and it'll check in. Wander to another tab and it'll notice. Try it.</span></p>", 6000);
+  });
 })();
 </script>
 </body>
