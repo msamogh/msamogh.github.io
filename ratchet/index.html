@@ -339,14 +339,14 @@ footer a{color:var(--ink-2)}
           </div>
         </div>
         <div class="now">
-          <div class="path">Ship the portfolio site › Write the case studies</div>
-          <div class="task">Draft the Ratchet case study, first pass</div>
+          <div class="path">Submit the workshop paper › Rerun the ablations</div>
+          <div class="task">Fix the data loader so run 3 can start</div>
           <div class="row"><div class="tbar"><i id="tbar"></i></div><span class="clock" id="clock">18:22</span></div>
           <div class="acts"><span class="chip ok">✓ Done</span><span class="chip park">⏸ Park</span><span class="chip">Meanwhile…</span><span class="chip">Break it down</span></div>
         </div>
       </div>
       <div class="ask" id="ask" aria-hidden="true">
-        <p>Still on it?<span>“Draft the Ratchet case study” · 20 minutes in</span></p>
+        <p>Still on it?<span>“Fix the data loader” · 20 minutes in</span></p>
         <div class="acts"><span class="chip yes">Yes, still on it</span><span class="chip">I drifted</span><span class="chip">Switch task</span></div>
       </div>
       <p class="stage-note">Every 20 minutes, one tap. No answer counts as drifted, so drifting can't hide.</p>
@@ -393,10 +393,10 @@ footer a{color:var(--ink-2)}
     </div>
     <div class="ledger rise" aria-label="An example week of kept promises">
       <h3>Promises to yourself · this week</h3>
-      <div class="promise"><span class="mk y" aria-hidden="true">✓</span><span><b>Send the draft to Priya</b><small>You said 25 min · took 22</small></span><span class="t">Mon 10:40</span></div>
-      <div class="promise"><span class="mk y" aria-hidden="true">✓</span><span><b>Book the dentist, finally</b><small>You said 5 min · took 6</small></span><span class="t">Tue 9:15</span></div>
-      <div class="promise"><span class="mk n" aria-hidden="true">…</span><span><b>Outline the talk</b><small>Not yet · parked: “stuck on the opening”</small></span><span class="t">Wed 4:02</span></div>
-      <div class="promise"><span class="mk y" aria-hidden="true">✓</span><span><b>Outline the talk</b><small>Picked up from the note · done</small></span><span class="t">Thu 11:30</span></div>
+      <div class="promise"><span class="mk y" aria-hidden="true">✓</span><span><b>Answer the reviewer comments</b><small>You said 25 min · took 22</small></span><span class="t">Mon 10:40</span></div>
+      <div class="promise"><span class="mk y" aria-hidden="true">✓</span><span><b>Pay rent before the late fee</b><small>You said 5 min · took 6</small></span><span class="t">Tue 9:15</span></div>
+      <div class="promise"><span class="mk n" aria-hidden="true">…</span><span><b>Draft the related-work section</b><small>Not yet · parked: “stuck on how to frame it”</small></span><span class="t">Wed 4:02</span></div>
+      <div class="promise"><span class="mk y" aria-hidden="true">✓</span><span><b>Draft the related-work section</b><small>Picked up from the note · done</small></span><span class="t">Thu 11:30</span></div>
       <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i class="n"></i><i></i><i></i><i></i><i></i><i class="n"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="n"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="n"></i><i></i><i></i><i></i><i></i><i></i></div>
       <p class="sum"><b>25 of 29</b> things you said you'd do, you did. That's not a feeling. It's your week.</p>
     </div>
@@ -412,7 +412,7 @@ footer a{color:var(--ink-2)}
       <li class="rise"><h3>Say what, and why</h3><p>Every sitting starts with a task and the goal it serves. Work with no goal can't start at all: the bad path is impossible, not just discouraged.</p><q>By the end of this sitting, I will have…</q></li>
       <li class="rise"><h3>Every minute counts</h3><p>The clock runs from the moment you start. Time nobody accounted for shows up on the day as it happens, not at midnight.</p><q>18 minutes in · on track</q></li>
       <li class="rise"><h3>Still on it?</h3><p>Every 20 minutes, a single tap. Say yes and carry on. Say you drifted and start again, no lecture. Silence counts as drift.</p><q>Still on it? · Yes · I drifted</q></li>
-      <li class="rise"><h3>Did you finish it?</h3><p>Each sitting ends with an honest answer before anything new can start. Finished, not yet, or parked for later with a note.</p><q>Did you send the draft? · Yes · Not yet</q></li>
+      <li class="rise"><h3>Did you finish it?</h3><p>Each sitting ends with an honest answer before anything new can start. Finished, not yet, or parked for later with a note.</p><q>Did you push the fix? · Yes · Not yet</q></li>
     </ol>
   </div>
 </section>
@@ -443,34 +443,34 @@ footer a{color:var(--ink-2)}
         <p class="label">Breadcrumbs</p>
         <h3>Where you left off, before you even ask.</h3>
         <p>When you set a goal down, Ratchet asks one question: where did you stop? The next time you switch back, the answer opens on top of everything else.</p>
-        <div class="crumb"><b>Breadcrumb · Tue 4:12pm</b><span class="l">Got the hero copy done. Stuck on the pricing table: try 3 tiers, not 2.</span><span class="l">Next: screenshot the dashboard.</span></div>
+        <div class="crumb"><b>Breadcrumb · Tue 4:12pm</b><span class="l">Run 3 is training; loss looked off after step 2k. Suspect the learning-rate warmup.</span><span class="l">Next: plot it against run 2.</span></div>
       </article>
 
       <article class="tile w3 rise">
         <p class="label">Workspaces</p>
         <h3>One click, and the whole goal comes back.</h3>
         <p>Every goal remembers its station: the browser tabs, folders, files, apps and terminal sessions it needs. Switch goals and your Mac rearranges itself, with everything else out of sight.</p>
-        <div class="stack"><span class="app-i"><i style="background:#7c5cd6">Ze</i>6 tabs</span><span class="app-i"><i style="background:#3d7bd9">Fi</i>case-studies/</span><span class="app-i"><i style="background:#1f1f1f">Cu</i>Cursor</span><span class="app-i"><i style="background:#c46a23">Cl</i>Claude</span></div>
+        <div class="stack"><span class="app-i"><i style="background:#7c5cd6">Ze</i>6 tabs</span><span class="app-i"><i style="background:#3d7bd9">Fi</i>experiments/</span><span class="app-i"><i style="background:#1f1f1f">Cu</i>Cursor</span><span class="app-i"><i style="background:#c46a23">Cl</i>Claude</span></div>
       </article>
 
       <article class="tile w3 rise">
         <p class="label">Goals that nest</p>
         <h3>Big goals become small, startable steps.</h3>
         <p>Goals grow into trees with deadlines and finish bonuses that shrink as a deadline slips. Overwhelmed? Break it down: the next tiny step starts right away.</p>
-        <div class="tree"><div><span class="dot"></span>Ship the portfolio site<span class="due">by Fri</span></div><div data-d="1"><span class="dot"></span>Write the case studies<span class="win">+12</span></div><div data-d="2"><span class="dot" style="background:var(--go)"></span>Draft the Ratchet one, first pass<span class="due">now</span></div></div>
+        <div class="tree"><div><span class="dot"></span>Submit the workshop paper<span class="due">by Fri</span></div><div data-d="1"><span class="dot"></span>Rerun the ablations<span class="win">+12</span></div><div data-d="2"><span class="dot" style="background:var(--go)"></span>Fix the data loader<span class="due">now</span></div></div>
       </article>
 
       <article class="tile w2 rise">
         <p class="label">Meanwhile</p>
         <h3>Waiting on an AI agent? Don't wander off.</h3>
         <p>Ratchet sees when Claude Code is working for you, and offers one small side quest to fill the wait. When the agent is done, you're brought back to the main task.</p>
-        <div class="mw"><div><span class="pulse"></span>Agent refactoring the parser<small>0:48</small></div><div>Meanwhile: reply to 2 emails<small>side quest</small></div></div>
+        <div class="mw"><div><span class="pulse"></span>Agent refactoring the eval harness<small>0:48</small></div><div>Meanwhile: start the laundry<small>side quest</small></div></div>
       </article>
 
       <article class="tile w2 rise">
         <p class="label">Torque, your coach</p>
         <div class="dog" aria-hidden="true">🐕</div>
-        <div class="bubble">“Two drafts parked since Thursday. Ten minutes on the first one, then reward yourself.”</div>
+        <div class="bubble">“The rebuttal's been parked since Thursday. Ten minutes on the first reviewer, then go get groceries.”</div>
         <p>A small, opinionated dog that reads your week and suggests one move at a time. Accept or dismiss each with a tap. Runs on your own Claude subscription.</p>
       </article>
 
@@ -478,7 +478,7 @@ footer a{color:var(--ink-2)}
         <p class="label">Frontiering</p>
         <h3>Eat. Shower. Move. They count.</h3>
         <p>The basics hyperfocus skips are on the scoreboard too. Do them and they pay; skip them and the day shows it.</p>
-        <div class="checks"><div><i class="on"></i>Breakfast<small>+20</small></div><div><i class="on"></i>Walk<small>+30</small></div><div><i></i>Shower</div></div>
+        <div class="checks"><div><i class="on"></i>Breakfast<small>+20</small></div><div><i class="on"></i>Walk<small>+30</small></div><div><i></i>Dinner that isn't cereal</div></div>
       </article>
 
       <article class="tile w3 rise">
