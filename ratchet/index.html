@@ -143,6 +143,27 @@ h2{font:750 clamp(30px,3.6vw,52px)/1.02 var(--display);letter-spacing:-.04em;mar
 .tax p.fix{color:var(--ink);font-weight:550;padding-top:10px;border-top:1px dashed var(--rule)}
 .tax p.fix::before{content:"Ratchet → ";color:var(--accent-ink);font:600 12px/1 var(--mono);letter-spacing:.04em;text-transform:uppercase}
 
+/* trust */
+.trust-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,64px);align-items:center}
+@media (max-width:900px){.trust-grid{grid-template-columns:minmax(0,1fr)}}
+.trust h2{max-width:16ch}
+.trust .big{font:500 clamp(22px,2.3vw,30px)/1.35 var(--serif);letter-spacing:-.01em;margin:0 0 20px;max-width:30ch}
+.trust .big em{font-style:italic;color:var(--accent-ink)}
+.trust p.body{color:var(--ink-2);margin:0 0 14px;max-width:58ch}
+.ledger{background:var(--card);border:1px solid var(--rule);border-radius:24px;padding:22px;box-shadow:var(--shadow);display:grid;gap:12px}
+.ledger h3{font:600 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 2px}
+.promise{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;background:var(--bg);border:1px solid var(--rule)}
+.promise .mk{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font:700 13px/1 var(--sans)}
+.promise .mk.y{background:var(--go-soft);color:var(--go)}
+.promise .mk.n{background:var(--warn-soft);color:var(--warn)}
+.promise b{display:block;font:600 15px/1.3 var(--serif)}
+.promise small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+.promise .t{font:500 12px/1 var(--mono);color:var(--muted);white-space:nowrap}
+.dots{display:flex;flex-wrap:wrap;gap:5px;padding-top:4px}
+.dots i{width:12px;height:12px;border-radius:4px;background:var(--go)}
+.dots i.n{background:color-mix(in srgb,var(--warn) 55%,var(--bg-2))}
+.ledger .sum{font-size:14px;color:var(--ink-2);margin:0}
+.ledger .sum b{color:var(--go)}
 /* the loop */
 .loop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;counter-reset:s;border:1px solid var(--rule);border-radius:22px;overflow:hidden;background:var(--rule);gap:1px}
 @media (max-width:960px){.loop{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -357,6 +378,27 @@ footer a{color:var(--ink-2)}
         <p>Switch tasks once and the context is gone: which tabs, which notes, what you were about to try.</p>
         <p class="fix">each goal keeps its own workspace and a Breadcrumb that says where you left off.</p>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec trust" id="trust">
+  <div class="wrap trust-grid">
+    <div class="rise">
+      <p class="label hot">The part nobody talks about</p>
+      <h2>You stopped believing your own “I'll do it today.”</h2>
+      <p class="big">After enough broken plans, the hardest part of ADHD isn't the work. It's that <em>you no longer trust the person who promised to do it.</em></p>
+      <p class="body">Pep talks don't fix that, and neither do bigger plans. What rebuilds trust is evidence: small promises, kept, and seen.</p>
+      <p class="body">So Ratchet shrinks the promise to one sitting (“by the end of this, I will have…”), asks honestly at the end whether you did, and keeps the record. A “not yet” is just a not yet: it's parked with a note, never held against you. Over a week the record starts to say something your inner critic can't argue with.</p>
+    </div>
+    <div class="ledger rise" aria-label="An example week of kept promises">
+      <h3>Promises to yourself · this week</h3>
+      <div class="promise"><span class="mk y" aria-hidden="true">✓</span><span><b>Send the draft to Priya</b><small>You said 25 min · took 22</small></span><span class="t">Mon 10:40</span></div>
+      <div class="promise"><span class="mk y" aria-hidden="true">✓</span><span><b>Book the dentist, finally</b><small>You said 5 min · took 6</small></span><span class="t">Tue 9:15</span></div>
+      <div class="promise"><span class="mk n" aria-hidden="true">…</span><span><b>Outline the talk</b><small>Not yet · parked: “stuck on the opening”</small></span><span class="t">Wed 4:02</span></div>
+      <div class="promise"><span class="mk y" aria-hidden="true">✓</span><span><b>Outline the talk</b><small>Picked up from the note · done</small></span><span class="t">Thu 11:30</span></div>
+      <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i class="n"></i><i></i><i></i><i></i><i></i><i class="n"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="n"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="n"></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="sum"><b>25 of 29</b> things you said you'd do, you did. That's not a feeling. It's your week.</p>
     </div>
   </div>
 </section>
